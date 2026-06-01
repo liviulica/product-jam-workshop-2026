@@ -1,0 +1,22 @@
+# Upstream clones (analyzed locally, not part of this project)
+/Handy/
+/fluffychat/
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Tooling cache
+.vite/
+
+# Logs
+*.log
+
+# OS / editor cruft
+.DS_Store
+.idea/
+
+# Local Claude settings (machine-specific; the /h: commands are tracked)
+.claude/settings.local.json

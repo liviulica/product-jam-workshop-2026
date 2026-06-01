@@ -1,0 +1,1550 @@
+{
+  "generatedAt": "2026-06-01T10:20:28Z",
+  "weights": {
+    "comments": 0.3,
+    "severity": 0.4,
+    "priority": 0.3
+  },
+  "issues": [
+    {
+      "number": 1133,
+      "title": "[BUG] v0.8.0 - Not opening at all",
+      "url": "https://github.com/cjpais/Handy/issues/1133",
+      "author": "jrie",
+      "createdAt": "2026-03-24T06:47:55Z",
+      "updatedAt": "2026-05-25T07:20:14Z",
+      "labels": [
+        "bug",
+        "critical"
+      ],
+      "scores": {
+        "comments": 9.3,
+        "severity": 10,
+        "priority": 5.2,
+        "total": 8.4
+      },
+      "rationale": "Top-ranked because it's a critical-labeled total app-launch failure (severity 10) on Windows 10/low-end Celonor hardware, with very high engagement (23 comments, 7 participants, 10 maintainer replies) keeping the comments score at 9.3 despite zero reactions.",
+      "recommendedAction": "Reproduce on Windows 10 with a low-end Intel iGPU (Celeron N2920, 64MB integrated) and add startup crash logging since no handy.log is generated on the v0.8.0 failure.",
+      "signals": {
+        "commentCount": 23,
+        "participants": 7,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 69
+      }
+    },
+    {
+      "number": 1213,
+      "title": "[BUG] Windows 11 after sleep mode stuck on \"transcribing\"",
+      "url": "https://github.com/cjpais/Handy/issues/1213",
+      "author": "KevinUK",
+      "createdAt": "2026-04-03T09:44:47Z",
+      "updatedAt": "2026-05-17T15:14:16Z",
+      "labels": [
+        "bug",
+        "critical"
+      ],
+      "scores": {
+        "comments": 6.8,
+        "severity": 10,
+        "priority": 6.8,
+        "total": 8.1
+      },
+      "rationale": "Ranks second as a critical-labeled functional break (severity 10): app gets permanently stuck on 'transcribing' after Windows 11 sleep with a 9MB-to-691MB memory blowup, backed by strong engagement (14 comments, 9 participants, 4 maintainer replies) and 2 reactions.",
+      "recommendedAction": "Reproduce the post-sleep wake cycle on Windows 11 and investigate the recording thread for a leaked/orphaned stream that balloons memory and hangs the transcribe state.",
+      "signals": {
+        "commentCount": 14,
+        "participants": 9,
+        "thumbsUp": 2,
+        "maintainerEngaged": true,
+        "ageDays": 59
+      }
+    },
+    {
+      "number": 1206,
+      "title": "[BUG] Canary 1b v2 - text auto translated to english, when autodetect on",
+      "url": "https://github.com/cjpais/Handy/issues/1206",
+      "author": "vyskoczilova",
+      "createdAt": "2026-04-02T11:31:19Z",
+      "updatedAt": "2026-05-13T13:24:57Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 2.6,
+        "severity": 7,
+        "priority": 9.3,
+        "total": 6.4
+      },
+      "rationale": "High priority (9.3) driven by 5 reactions and recency despite moderate engagement (6 comments, 2 participants); severity 7 reflects a real correctness bug where Canary 1b v2 auto-translates dictation to English with autodetect on.",
+      "recommendedAction": "Check whether the Canary/Parakeet integration is passing a translate task flag instead of transcribe when language autodetect is enabled, using the attached Loom and handy.log to confirm.",
+      "signals": {
+        "commentCount": 6,
+        "participants": 2,
+        "thumbsUp": 5,
+        "maintainerEngaged": true,
+        "ageDays": 59
+      }
+    },
+    {
+      "number": 1101,
+      "title": "[BUG] audio recording issue. Microphone initialize twice",
+      "url": "https://github.com/cjpais/Handy/issues/1101",
+      "author": "kopach",
+      "createdAt": "2026-03-19T12:56:15Z",
+      "updatedAt": "2026-05-20T17:11:28Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 6.5,
+        "severity": 7,
+        "priority": 5.1,
+        "total": 6.3
+      },
+      "rationale": "Severity 7 for a usability-degrading double mic-initialization that clips the first word, lifted by strong engagement (16 comments, 6 participants, 5 maintainer replies) even with zero reactions.",
+      "recommendedAction": "Trace the recording-start path for a redundant stream re-initialization and add a warm-up/pre-roll buffer so the first word isn't truncated on push-to-talk.",
+      "signals": {
+        "commentCount": 16,
+        "participants": 6,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 73
+      }
+    },
+    {
+      "number": 1005,
+      "title": "[BUG] Handy's process stays open in the background.",
+      "url": "https://github.com/cjpais/Handy/issues/1005",
+      "author": "wyntrson",
+      "createdAt": "2026-03-11T16:02:09Z",
+      "updatedAt": "2026-05-07T01:24:08Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 4.2,
+        "severity": 7,
+        "priority": 6.3,
+        "total": 6
+      },
+      "rationale": "Severity 7 for a process-lifecycle bug where Handy stays resident after window close despite the tray toggle being off; moderate engagement (8 comments, 5 participants, 4 maintainer replies) and 2 reactions keep priority at 6.3.",
+      "recommendedAction": "Fix the window-close handler on Windows so it fully exits the process when the tray icon setting is disabled, rather than leaving a background task.",
+      "signals": {
+        "commentCount": 8,
+        "participants": 5,
+        "thumbsUp": 2,
+        "maintainerEngaged": true,
+        "ageDays": 81
+      }
+    },
+    {
+      "number": 1341,
+      "title": "[BUG] Windows 11 after waking up from sleep transcribe key doesn't initiate transcription",
+      "url": "https://github.com/cjpais/Handy/issues/1341",
+      "author": "mateenkhalil",
+      "createdAt": "2026-04-28T12:43:42Z",
+      "updatedAt": "2026-05-22T04:58:04Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 2.3,
+        "severity": 7,
+        "priority": 6.9,
+        "total": 5.6
+      },
+      "rationale": "Severity 7 functional break (transcribe key dead after Windows 11 wake-from-sleep, fixed only by restart), with priority 6.9 helped by recency (updated 10 days ago) and 2 reactions, though engagement is light (4 comments, 3 participants).",
+      "recommendedAction": "Investigate hotkey re-registration after system resume on Windows 11 and likely overlaps with #1213; ask for handy.log around a wake event since the reporter found nothing in logs.",
+      "signals": {
+        "commentCount": 4,
+        "participants": 3,
+        "thumbsUp": 2,
+        "maintainerEngaged": true,
+        "ageDays": 33
+      }
+    },
+    {
+      "number": 1262,
+      "title": "Data loss during the editing of History Limit / Auto-Delete Recordings",
+      "url": "https://github.com/cjpais/Handy/issues/1262",
+      "author": "danielvarga",
+      "createdAt": "2026-04-09T18:57:50Z",
+      "updatedAt": "2026-04-19T19:47:38Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 2.3,
+        "severity": 9.5,
+        "priority": 3.9,
+        "total": 5.6
+      },
+      "rationale": "Severity is very high (9.5) because it's data loss (precious WAV files and transcripts deleted when raising the history limit), but the total is held to 5.6 by thin engagement (4 comments, 3 participants, no reactions) and a stale 42-day-old thread.",
+      "recommendedAction": "Audit the history-limit/auto-delete code path for an ordering bug that purges before applying the new limit, and add a guard plus the reporter's log timeline as a regression test.",
+      "signals": {
+        "commentCount": 4,
+        "participants": 3,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 52
+      }
+    },
+    {
+      "number": 1228,
+      "title": "[BUG] sometimes trascribing is stuck forever(?)",
+      "url": "https://github.com/cjpais/Handy/issues/1228",
+      "author": "sakhdevel",
+      "createdAt": "2026-04-05T11:08:11Z",
+      "updatedAt": "2026-05-05T08:00:10Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 2.3,
+        "severity": 9,
+        "priority": 4.4,
+        "total": 5.6
+      },
+      "rationale": "Severity 9 because transcription hangs forever on Linux requiring a full app restart, but ranked mid-pack since engagement is modest (4 comments, 3 participants, no reactions) and the thread is 27 days stale.",
+      "recommendedAction": "Reproduce on Linux with long dictation inputs and add a transcription timeout/watchdog, requesting the reporter's handy.log from a stuck session to pinpoint where it blocks.",
+      "signals": {
+        "commentCount": 4,
+        "participants": 3,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 56
+      }
+    },
+    {
+      "number": 998,
+      "title": "[BUG] macOS 26.3 - 'Mute While Recording' doesn't work when using USB Audio Interface. Can handy have 'Pause While Recording' as an alternative?",
+      "url": "https://github.com/cjpais/Handy/issues/998",
+      "author": "apotenza92",
+      "createdAt": "2026-03-11T07:46:14Z",
+      "updatedAt": "2026-03-25T15:41:02Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 3.6,
+        "severity": 7,
+        "priority": 5.6,
+        "total": 5.6
+      },
+      "rationale": "Severity 7 because 'Mute While Recording' silently fails with USB audio interfaces on macOS (a feature not working), with moderate engagement (8 comments, 5 participants) and 3 reactions but only 1 maintainer reply and a stale 67-day update.",
+      "recommendedAction": "Implement the requested 'Pause While Recording' fallback for USB interfaces that don't expose software volume control on macOS, rather than relying on system mute.",
+      "signals": {
+        "commentCount": 8,
+        "participants": 5,
+        "thumbsUp": 3,
+        "maintainerEngaged": true,
+        "ageDays": 82
+      }
+    },
+    {
+      "number": 1446,
+      "title": "[BUG] Intermittent freeze during post-recording transcription and missing segments in longer speech inputs",
+      "url": "https://github.com/cjpais/Handy/issues/1446",
+      "author": "aaliyanexe",
+      "createdAt": "2026-05-28T13:31:45Z",
+      "updatedAt": "2026-05-31T19:16:22Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.1,
+        "severity": 9,
+        "priority": 5.3,
+        "total": 5.5
+      },
+      "rationale": "Severity 9 for an intermittent transcription freeze plus dropped segments in long speech, but the total (5.5) is suppressed by near-zero engagement (2 comments, 2 participants, no maintainer reply yet) on a brand-new 3-day-old report with 2 reactions.",
+      "recommendedAction": "Triage and request handy.log plus OS/CPU details, then check whether this duplicates the long-recording drop (#1332) and post-processing freeze patterns before deep investigation.",
+      "signals": {
+        "commentCount": 2,
+        "participants": 2,
+        "thumbsUp": 2,
+        "maintainerEngaged": false,
+        "ageDays": 3
+      }
+    },
+    {
+      "number": 1315,
+      "title": "[BUG] Post processing Hotkey \"Left Ctrl + Letf Alt\" changes to \"Left Ctrl\"",
+      "url": "https://github.com/cjpais/Handy/issues/1315",
+      "author": "DavidKirschey",
+      "createdAt": "2026-04-20T11:58:16Z",
+      "updatedAt": "2026-04-27T07:12:10Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.9,
+        "severity": 9,
+        "priority": 4.1,
+        "total": 5.4
+      },
+      "rationale": "Severity 9 because Handy hijacks all 'Left Ctrl' presses (rendering Windows unusable until the hotkey is reset), but engagement is low (3 comments, 3 participants, 1 maintainer reply, no reactions) and the thread is 35 days stale.",
+      "recommendedAction": "Investigate why the multi-modifier post-processing hotkey degrades to a single 'Left Ctrl' binding over time (possibly tied to screen lock) and link to related #1314.",
+      "signals": {
+        "commentCount": 3,
+        "participants": 3,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 41
+      }
+    },
+    {
+      "number": 1448,
+      "title": "build.rs enables Apple Intelligence on Command-Line-Tools-only macOS, then fails to compile (missing FoundationModelsMacros plugin)",
+      "url": "https://github.com/cjpais/Handy/issues/1448",
+      "author": "woerndl",
+      "createdAt": "2026-05-29T06:44:00Z",
+      "updatedAt": "2026-05-29T12:21:50Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0.8,
+        "severity": 8.5,
+        "priority": 5.4,
+        "total": 5.3
+      },
+      "rationale": "Severity 8.5 for a build-breaking bug (Apple Intelligence bridge fails to compile on Command-Line-Tools-only macOS), but it's a niche build-environment issue with minimal engagement (1 comment, 1 participant) on a fresh 3-day report, so total stays 5.3.",
+      "recommendedAction": "Make build.rs detect full Xcode (not just CLT) before enabling the Apple Intelligence bridge, or gate it behind a feature flag so CLT-only builds succeed.",
+      "signals": {
+        "commentCount": 1,
+        "participants": 1,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 3
+      }
+    },
+    {
+      "number": 1283,
+      "title": "Microphone initialization delay (~500ms) causes beginning of speech to be cut off",
+      "url": "https://github.com/cjpais/Handy/issues/1283",
+      "author": "domdomegg",
+      "createdAt": "2026-04-12T22:24:29Z",
+      "updatedAt": "2026-04-24T09:51:08Z",
+      "labels": [],
+      "scores": {
+        "comments": 4.9,
+        "severity": 4,
+        "priority": 7.6,
+        "total": 5.3
+      },
+      "rationale": "Lower severity (4) since it's a quality/latency annoyance not a crash, but priority is high (7.6) from 4 reactions, 11 comments, 5 participants, and 4 maintainer replies, plus a well-documented ~500ms mic init delay clipping speech.",
+      "recommendedAction": "Implement mic stream pre-warming or a short pre-roll capture buffer for push-to-talk so the first word isn't lost; this likely shares a root cause with #1101.",
+      "signals": {
+        "commentCount": 11,
+        "participants": 5,
+        "thumbsUp": 4,
+        "maintainerEngaged": true,
+        "ageDays": 49
+      }
+    },
+    {
+      "number": 1281,
+      "title": "[BUG] System-wide freeze when Accessibility permissions are revoked while app is running",
+      "url": "https://github.com/cjpais/Handy/issues/1281",
+      "author": "NathanLenias",
+      "createdAt": "2026-04-12T18:35:21Z",
+      "updatedAt": "2026-04-13T08:21:40Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 2.2,
+        "severity": 9,
+        "priority": 3.6,
+        "total": 5.3
+      },
+      "rationale": "Severity 9 because revoking Accessibility permissions while running freezes the entire macOS system, but engagement is thin (5 comments, only 2 participants, no reactions) and the 49-day thread is stale, capping the total at 5.3.",
+      "recommendedAction": "Reproduce the Accessibility-revoke scenario on macOS and add graceful handling/event-loop guarding so the app degrades instead of locking up the whole desktop.",
+      "signals": {
+        "commentCount": 5,
+        "participants": 2,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 49
+      }
+    },
+    {
+      "number": 828,
+      "title": "[BUG] Subsequent recordings don't capture anything",
+      "url": "https://github.com/cjpais/Handy/issues/828",
+      "author": "qingxiang-jia",
+      "createdAt": "2026-02-15T17:18:15Z",
+      "updatedAt": "2026-03-27T05:37:24Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 4.6,
+        "severity": 7,
+        "priority": 3.8,
+        "total": 5.3
+      },
+      "rationale": "Severity 7 because subsequent recordings capture no audio (core function breaks after first use), supported by solid engagement (12 comments, 5 maintainer replies) but only 3 participants, 1 reaction, and a stale 66-day update.",
+      "recommendedAction": "Investigate audio stream teardown/re-acquisition between recordings using the reporter's contrasting success/failure logs, and confirm it isn't device-specific.",
+      "signals": {
+        "commentCount": 12,
+        "participants": 3,
+        "thumbsUp": 1,
+        "maintainerEngaged": true,
+        "ageDays": 105
+      }
+    },
+    {
+      "number": 1143,
+      "title": "First shortcut press after launch fails to record/transcribe (Windows, since v0.7.9)",
+      "url": "https://github.com/cjpais/Handy/issues/1143",
+      "author": "MuseBranch",
+      "createdAt": "2026-03-25T10:40:48Z",
+      "updatedAt": "2026-05-27T00:30:50Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 2.6,
+        "severity": 7,
+        "priority": 5.3,
+        "total": 5.2
+      },
+      "rationale": "Severity 7 for a consistent first-shortcut-fails-after-launch bug on Windows since v0.7.9; priority 5.3 helped by recency (updated 5 days ago) but engagement is moderate (5 comments, 4 participants, 1 maintainer reply, no reactions).",
+      "recommendedAction": "Add a startup readiness check or delayed hotkey arming on Windows so the first post-launch trigger records correctly instead of producing an off animation and no transcription.",
+      "signals": {
+        "commentCount": 5,
+        "participants": 4,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 67
+      }
+    },
+    {
+      "number": 990,
+      "title": "[BUG] Windows 11: \"backend-specific error\"",
+      "url": "https://github.com/cjpais/Handy/issues/990",
+      "author": "fmos",
+      "createdAt": "2026-03-10T08:13:06Z",
+      "updatedAt": "2026-03-27T11:19:32Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 4.9,
+        "severity": 7,
+        "priority": 3,
+        "total": 5.2
+      },
+      "rationale": "Severity 7 because a 'backend-specific error' overlay blocks transcription entirely, with good engagement (12 comments, 5 maintainer replies) but priority dragged to 3 by zero reactions and a stale 65-day update on an older v0.7.10 report.",
+      "recommendedAction": "Reproduce on AMD Ryzen/Radeon 780M hardware on Windows 11 24H2 and decode the cpal backend-specific error from the attached log to identify the failing audio device path.",
+      "signals": {
+        "commentCount": 12,
+        "participants": 4,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 83
+      }
+    },
+    {
+      "number": 811,
+      "title": "[BUG] Visual feedback overlay not displayed when using secondary monitors on Windows",
+      "url": "https://github.com/cjpais/Handy/issues/811",
+      "author": "parkghost",
+      "createdAt": "2026-02-13T11:46:08Z",
+      "updatedAt": "2026-03-21T10:47:07Z",
+      "labels": [],
+      "scores": {
+        "comments": 6.6,
+        "severity": 4,
+        "priority": 5.4,
+        "total": 5.2
+      },
+      "rationale": "Lower severity (4) since it's a missing visual overlay (not data/function loss), but priority and comments are elevated (15 comments, 7 participants, 5 maintainer replies, 3 reactions) on Windows multi-monitor secondary-display behavior.",
+      "recommendedAction": "Fix overlay positioning to follow the active/focused monitor on Windows multi-monitor setups; treat as the canonical issue and link the Linux variant #1375 and discussion #655.",
+      "signals": {
+        "commentCount": 15,
+        "participants": 7,
+        "thumbsUp": 3,
+        "maintainerEngaged": true,
+        "ageDays": 107
+      }
+    },
+    {
+      "number": 1332,
+      "title": "[BUG] Handy silently drops long audio recordings (~5min)",
+      "url": "https://github.com/cjpais/Handy/issues/1332",
+      "author": "VjiaoBlack",
+      "createdAt": "2026-04-25T00:56:50Z",
+      "updatedAt": "2026-05-13T01:15:43Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 2.9,
+        "severity": 7,
+        "priority": 4.8,
+        "total": 5.1
+      },
+      "rationale": "Severity 7 because long (~5min) recordings are silently dropped with no saved audio or text (effective data loss for long dictation), with moderate engagement (6 comments, 3 participants, 3 maintainer replies) and no reactions.",
+      "recommendedAction": "Reproduce with a 5-minute push-to-talk-off recording and check for a buffer-size or duration cap that silently discards long audio; likely related to #1446's missing-segments report.",
+      "signals": {
+        "commentCount": 6,
+        "participants": 3,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 37
+      }
+    },
+    {
+      "number": 806,
+      "title": "[BUG] No microphone recording on Pop!_OS 24.04 (PipeWire) – cpal probes OSS but fails to use ALSA input",
+      "url": "https://github.com/cjpais/Handy/issues/806",
+      "author": "jnials",
+      "createdAt": "2026-02-12T22:26:54Z",
+      "updatedAt": "2026-04-26T21:37:46Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 3.4,
+        "severity": 7,
+        "priority": 4.1,
+        "total": 5.1
+      },
+      "rationale": "Severity 7 because the mic produces silent/empty recordings on Pop!_OS/PipeWire (cpal probes OSS but fails ALSA input), with moderate engagement (6 comments, 5 participants, 2 maintainer replies) and no reactions on an older v0.7.5 report.",
+      "recommendedAction": "Fix cpal/ALSA device selection on PipeWire systems so it doesn't fall through to nonexistent OSS /dev/dsp, and verify against the reporter's RUST_LOG=cpal=debug output.",
+      "signals": {
+        "commentCount": 6,
+        "participants": 5,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 108
+      }
+    },
+    {
+      "number": 1428,
+      "title": "Would it be possible to list Handy in the Windows Store?",
+      "url": "https://github.com/cjpais/Handy/issues/1428",
+      "author": "lewismoss",
+      "createdAt": "2026-05-23T12:08:04Z",
+      "updatedAt": "2026-05-26T05:19:47Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.9,
+        "severity": 7,
+        "priority": 5.3,
+        "total": 5
+      },
+      "rationale": "Despite the 'bug' label this is a distribution request (Windows Store listing); severity 7 appears mislabeled, and modest engagement (4 comments, 2 participants, 2 maintainer replies, recent) keeps total at 5.0.",
+      "recommendedAction": "Relabel as enhancement/distribution and decide whether MSIX packaging for the Windows Store is worth the maintenance overhead before committing.",
+      "signals": {
+        "commentCount": 4,
+        "participants": 2,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 8
+      }
+    },
+    {
+      "number": 1418,
+      "title": "[Bug]: Minor - Persistent CPU usage (0.2%) in background after stopping recording via hotkey (WebView2 / Overlay idle load)",
+      "url": "https://github.com/cjpais/Handy/issues/1418",
+      "author": "koloved",
+      "createdAt": "2026-05-21T09:11:30Z",
+      "updatedAt": "2026-05-27T10:09:19Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.9,
+        "severity": 7,
+        "priority": 5.3,
+        "total": 5
+      },
+      "rationale": "Self-described as minor (persistent 0.2% idle CPU in WebView2 overlay after recording), so severity 7 likely overstates a low-impact issue; light engagement (4 comments, 2 participants, no reactions) but recent activity keeps total at 5.0.",
+      "recommendedAction": "Investigate the overlay WebView2 render loop not fully idling after the hotkey stops recording, and align teardown behavior with other overlay-close paths; likely related to #1371.",
+      "signals": {
+        "commentCount": 4,
+        "participants": 2,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 11
+      }
+    },
+    {
+      "number": 1279,
+      "title": "[BUG] WebKitWebProcess memory grows continuously during transcription on Linux",
+      "url": "https://github.com/cjpais/Handy/issues/1279",
+      "author": "captivus",
+      "createdAt": "2026-04-12T16:36:09Z",
+      "updatedAt": "2026-05-28T23:58:24Z",
+      "labels": [],
+      "scores": {
+        "comments": 5.2,
+        "severity": 4,
+        "priority": 6.3,
+        "total": 5
+      },
+      "rationale": "Severity 4 because it's gradual rather than an immediate crash, but a real WebKitWebProcess memory leak on Linux that can OOM the machine; priority 6.3 boosted by very recent activity (3 days), strong engagement (14 comments, 4 maintainer replies), and 1 reaction.",
+      "recommendedAction": "Profile the Linux WebKitWebProcess during repeated transcription to find the accumulating allocation and release it, since OOM is a serious downstream consequence.",
+      "signals": {
+        "commentCount": 14,
+        "participants": 4,
+        "thumbsUp": 1,
+        "maintainerEngaged": true,
+        "ageDays": 49
+      }
+    },
+    {
+      "number": 921,
+      "title": "[BUG] Clipboard is being overwritten",
+      "url": "https://github.com/cjpais/Handy/issues/921",
+      "author": "rishiskhare",
+      "createdAt": "2026-03-01T03:00:54Z",
+      "updatedAt": "2026-03-04T04:37:58Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 3.2,
+        "severity": 7,
+        "priority": 3.8,
+        "total": 4.9
+      },
+      "rationale": "Severity 7 because the user's clipboard is destroyed (not restored) after every transcription, a real data-annoyance, but engagement is minimal (8 comments but only 2 participants, 2 reactions) and the thread is very stale at 89 days.",
+      "recommendedAction": "Save and restore prior clipboard contents around the paste step on macOS, or switch to a paste method that doesn't clobber the clipboard.",
+      "signals": {
+        "commentCount": 8,
+        "participants": 2,
+        "thumbsUp": 2,
+        "maintainerEngaged": true,
+        "ageDays": 92
+      }
+    },
+    {
+      "number": 603,
+      "title": "[BUG] cannot run use appimage format",
+      "url": "https://github.com/cjpais/Handy/issues/603",
+      "author": "newyorkthink",
+      "createdAt": "2026-01-16T21:30:52Z",
+      "updatedAt": "2026-02-10T02:04:23Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 5.1,
+        "severity": 7,
+        "priority": 2,
+        "total": 4.9
+      },
+      "rationale": "Severity 7 because the AppImage fails to run on Linux (ALSA dmix/dsnoop slave errors blocking startup), with decent engagement (12 comments, 6 maintainer replies) but priority crushed to 2 by zero reactions and a very stale 111-day update on old v0.7.x.",
+      "recommendedAction": "Reproduce AppImage launch on the reporter's distro and address the ALSA slave-open failures; verify whether newer releases or the PipeWire fixes have already resolved it before closing.",
+      "signals": {
+        "commentCount": 12,
+        "participants": 4,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 135
+      }
+    },
+    {
+      "number": 1162,
+      "title": "[BUG] Linux: push-to-talk sometimes gets stuck in Cancel state until manually canceled",
+      "url": "https://github.com/cjpais/Handy/issues/1162",
+      "author": "dadaphl",
+      "createdAt": "2026-03-27T10:54:27Z",
+      "updatedAt": "2026-05-04T14:45:44Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0.6,
+        "severity": 9,
+        "priority": 3.4,
+        "total": 4.8
+      },
+      "rationale": "Severity 9 because push-to-talk gets stuck in Cancel state on Linux (likely a SIGUSR1 hang per the AI-assisted core dump), but total is held to 4.8 by single-reporter engagement (1 comment, 1 participant, no maintainer reply) and 1 reaction.",
+      "recommendedAction": "Validate the reporter's SIGUSR1 hypothesis against the upstream source and core dump, and add signal-safe handling to the push-to-talk state machine on Linux.",
+      "signals": {
+        "commentCount": 1,
+        "participants": 1,
+        "thumbsUp": 1,
+        "maintainerEngaged": false,
+        "ageDays": 65
+      }
+    },
+    {
+      "number": 1019,
+      "title": "[BUG] Linux version does not allow transcribe shortcut to be a single key.",
+      "url": "https://github.com/cjpais/Handy/issues/1019",
+      "author": "possiblyneal",
+      "createdAt": "2026-03-12T14:37:09Z",
+      "updatedAt": "2026-04-08T23:58:43Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 3.3,
+        "severity": 7,
+        "priority": 3.4,
+        "total": 4.8
+      },
+      "rationale": "Severity 7 because Linux can't bind a single-key transcribe shortcut (a capability that works on Windows), with moderate engagement (8 comments, 4 participants, only 1 maintainer reply) and no reactions on a stale 53-day thread.",
+      "recommendedAction": "Allow single-key (non-modifier) shortcut registration on the Linux global-hotkey backend to match the Windows behavior the reporter relies on.",
+      "signals": {
+        "commentCount": 8,
+        "participants": 4,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 80
+      }
+    },
+    {
+      "number": 1415,
+      "title": "[BUG] The app freezes",
+      "url": "https://github.com/cjpais/Handy/issues/1415",
+      "author": "JerryTheQuad",
+      "createdAt": "2026-05-19T06:58:56Z",
+      "updatedAt": "2026-05-19T07:08:53Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0.6,
+        "severity": 9,
+        "priority": 3,
+        "total": 4.7
+      },
+      "rationale": "Severity 9 because the whole app freezes on recording attempt, requiring a forced PC shutdown, but engagement is essentially nil (1 comment, 1 participant, no maintainer reply, no reactions) on a 13-day report, capping total at 4.7.",
+      "recommendedAction": "Ask for the full handy.log and GPU driver details, then check whether this duplicates the Windows freeze/transcribe-hang issues (#1213, #1446) given the RTX 3050 + i5-13400f setup.",
+      "signals": {
+        "commentCount": 1,
+        "participants": 1,
+        "thumbsUp": 0,
+        "maintainerEngaged": false,
+        "ageDays": 13
+      }
+    },
+    {
+      "number": 1358,
+      "title": "[BUG] Push to talk with Super+Space keeps auto-repeating the space key",
+      "url": "https://github.com/cjpais/Handy/issues/1358",
+      "author": "tredondo",
+      "createdAt": "2026-05-01T17:50:28Z",
+      "updatedAt": "2026-05-05T07:59:04Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.7,
+        "severity": 7,
+        "priority": 4.4,
+        "total": 4.7
+      },
+      "rationale": "Severity 7 because Super+Space push-to-talk auto-repeats spaces into the output (corrupting dictation), with light engagement (3 comments, 2 participants, 2 maintainer replies) and no reactions.",
+      "recommendedAction": "Suppress/consume the held space key during push-to-talk so the underlying key's auto-repeat doesn't leak space characters into the active app.",
+      "signals": {
+        "commentCount": 3,
+        "participants": 2,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 30
+      }
+    },
+    {
+      "number": 646,
+      "title": "[BUG] Audio session activation triggers Handoff, stealing AirPods from other devices",
+      "url": "https://github.com/cjpais/Handy/issues/646",
+      "author": "notnotjake",
+      "createdAt": "2026-01-22T18:38:04Z",
+      "updatedAt": "2026-03-26T10:59:29Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 3.5,
+        "severity": 7,
+        "priority": 2.9,
+        "total": 4.7
+      },
+      "rationale": "Severity 7 because activating Handy's audio session steals AirPods routing from other devices via Handoff on macOS (disruptive), but priority is only 2.9 from zero reactions, modest engagement (8 comments, 4 participants), and a stale 66-day update.",
+      "recommendedAction": "Configure the macOS audio session category/options so sound-effect playback doesn't register as primary media and trigger AirPods Handoff.",
+      "signals": {
+        "commentCount": 8,
+        "participants": 4,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 129
+      }
+    },
+    {
+      "number": 1313,
+      "title": "[BUG] GPU not detected (linux)",
+      "url": "https://github.com/cjpais/Handy/issues/1313",
+      "author": "megamster",
+      "createdAt": "2026-04-20T03:55:09Z",
+      "updatedAt": "2026-04-20T04:47:49Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.3,
+        "severity": 7,
+        "priority": 4.8,
+        "total": 4.6
+      },
+      "rationale": "Severity 7 because Whisper GPU acceleration isn't used on a Vulkan-capable Intel iGPU on Linux (forcing slow CPU), but engagement is minimal (2 comments, 2 participants, 1 maintainer reply) with just 1 reaction.",
+      "recommendedAction": "Check GPU/Vulkan detection logic on Intel iGPUs under Fedora Atomic and confirm whether the build ships Vulkan-enabled Whisper for that hardware.",
+      "signals": {
+        "commentCount": 2,
+        "participants": 2,
+        "thumbsUp": 1,
+        "maintainerEngaged": true,
+        "ageDays": 42
+      }
+    },
+    {
+      "number": 1409,
+      "title": "[BUG] post processing should not be activated on empty transcription",
+      "url": "https://github.com/cjpais/Handy/issues/1409",
+      "author": "bogzbonny",
+      "createdAt": "2026-05-15T06:28:03Z",
+      "updatedAt": "2026-05-15T15:05:07Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0.8,
+        "severity": 7,
+        "priority": 4.9,
+        "total": 4.5
+      },
+      "rationale": "Severity 7 because post-processing fires on empty transcriptions and pastes garbage error text, a real correctness bug, but total is 4.5 due to single-reporter engagement (1 comment, 1 participant, 1 maintainer reply, no reactions) on a recent report.",
+      "recommendedAction": "Short-circuit the post-processing step when the base transcription is blank or whitespace-only so it never sends an empty prompt to the LLM.",
+      "signals": {
+        "commentCount": 1,
+        "participants": 1,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 17
+      }
+    },
+    {
+      "number": 1323,
+      "title": "[BUG] Cohere model cuts off long text",
+      "url": "https://github.com/cjpais/Handy/issues/1323",
+      "author": "cgbur",
+      "createdAt": "2026-04-21T20:46:39Z",
+      "updatedAt": "2026-04-22T00:40:06Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0.8,
+        "severity": 7,
+        "priority": 4.8,
+        "total": 4.5
+      },
+      "rationale": "Severity 7 because Cohere post-processing truncates long dictation due to output-token limits (lost content), but engagement is single-reporter (1 comment, 1 participant, 1 maintainer reply) with only 1 reaction.",
+      "recommendedAction": "Raise the max output tokens for Cohere or implement chunked processing for long transcripts so output isn't cut off mid-text.",
+      "signals": {
+        "commentCount": 1,
+        "participants": 1,
+        "thumbsUp": 1,
+        "maintainerEngaged": true,
+        "ageDays": 40
+      }
+    },
+    {
+      "number": 1284,
+      "title": "[BUG] Mic permission page loading forever",
+      "url": "https://github.com/cjpais/Handy/issues/1284",
+      "author": "Looodon",
+      "createdAt": "2026-04-13T01:22:46Z",
+      "updatedAt": "2026-04-19T17:35:04Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.9,
+        "severity": 7,
+        "priority": 3.9,
+        "total": 4.5
+      },
+      "rationale": "Severity 7 because the mic-permission page loads forever and can freeze Windows sound settings after the v0.8.2 update (only fixed by downgrading), but engagement is light (3 comments, 3 participants, 1 maintainer reply, no reactions).",
+      "recommendedAction": "Investigate what changed in v0.8.2 mic-permission handling on Windows versus v0.7.9 and add a timeout/fallback so the permission page doesn't hang indefinitely.",
+      "signals": {
+        "commentCount": 3,
+        "participants": 3,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 49
+      }
+    },
+    {
+      "number": 1234,
+      "title": "[BUG] MacOS Accessibility Access not detected on first run",
+      "url": "https://github.com/cjpais/Handy/issues/1234",
+      "author": "jedashanne",
+      "createdAt": "2026-04-05T22:32:59Z",
+      "updatedAt": "2026-04-13T03:48:16Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.3,
+        "severity": 7,
+        "priority": 4.5,
+        "total": 4.5
+      },
+      "rationale": "Severity 7 because macOS Accessibility access isn't detected on first run (blocking setup until toggled off/on), but it has a known workaround and thin engagement (2 comments, 2 participants, 1 reaction), keeping total at 4.5.",
+      "recommendedAction": "Re-poll or refresh the Accessibility permission state after the user grants it on first run so a manual toggle isn't required.",
+      "signals": {
+        "commentCount": 2,
+        "participants": 2,
+        "thumbsUp": 1,
+        "maintainerEngaged": true,
+        "ageDays": 56
+      }
+    },
+    {
+      "number": 895,
+      "title": "[BUG] AppImage .DirIcon broken",
+      "url": "https://github.com/cjpais/Handy/issues/895",
+      "author": "kem-a",
+      "createdAt": "2026-02-25T15:03:21Z",
+      "updatedAt": "2026-03-16T05:50:43Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 3.1,
+        "severity": 7,
+        "priority": 2.5,
+        "total": 4.5
+      },
+      "rationale": "Severity 7 appears high for a cosmetic packaging defect (broken .DirIcon in the AppImage); engagement is moderate (7 comments, 3 participants, 3 maintainer replies) with no reactions and a stale 77-day update.",
+      "recommendedAction": "Fix the AppImage build so .DirIcon is generated correctly; low-effort packaging fix that can be batched with other Linux distribution issues.",
+      "signals": {
+        "commentCount": 7,
+        "participants": 3,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 95
+      }
+    },
+    {
+      "number": 1366,
+      "title": "[BUG] Trailing space doesn't get appended on some applications",
+      "url": "https://github.com/cjpais/Handy/issues/1366",
+      "author": "cgbur",
+      "createdAt": "2026-05-05T16:27:30Z",
+      "updatedAt": "2026-05-06T11:44:40Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0.8,
+        "severity": 7,
+        "priority": 4.5,
+        "total": 4.4
+      },
+      "rationale": "Severity 7 likely overstates a minor edge case (trailing space not appended in some apps like Slack on macOS); single-reporter engagement (1 comment, 1 participant, 1 maintainer reply, no reactions) caps total at 4.4.",
+      "recommendedAction": "Consider a legacy mode that sends a real keyboard space for apps that ignore the injected trailing space, and confirm which paste/inject path Slack uses.",
+      "signals": {
+        "commentCount": 1,
+        "participants": 1,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 26
+      }
+    },
+    {
+      "number": 1265,
+      "title": "[BUG] Non-English model shown in English list",
+      "url": "https://github.com/cjpais/Handy/issues/1265",
+      "author": "tredondo",
+      "createdAt": "2026-04-10T02:25:36Z",
+      "updatedAt": "2026-04-19T22:49:42Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.3,
+        "severity": 7,
+        "priority": 3.9,
+        "total": 4.4
+      },
+      "rationale": "Severity 7 for a model-list filtering bug (non-English models shown under the English language filter), a minor UX/correctness issue with light engagement (2 comments, 2 participants, 1 maintainer reply, no reactions).",
+      "recommendedAction": "Fix the language-based model filtering so the English list only shows English-capable models; small frontend/metadata fix.",
+      "signals": {
+        "commentCount": 2,
+        "participants": 2,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 52
+      }
+    },
+    {
+      "number": 956,
+      "title": "[BUG] Modifiers as shortcut activate Handy when held",
+      "url": "https://github.com/cjpais/Handy/issues/956",
+      "author": "raine",
+      "createdAt": "2026-03-04T06:58:21Z",
+      "updatedAt": "2026-03-06T07:54:51Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 3.1,
+        "severity": 7,
+        "priority": 2.1,
+        "total": 4.4
+      },
+      "rationale": "Severity 7 because using a modifier (fn/Command) as the shortcut makes Handy activate on every modifier keydown, breaking normal shortcuts; engagement is moderate (7 comments, 3 participants, 3 maintainer replies) but priority is low (2.1) from no reactions and a stale 87-day update.",
+      "recommendedAction": "Change modifier-only shortcuts to fire on key release (tap) rather than keydown so combos like Command+S aren't hijacked on macOS.",
+      "signals": {
+        "commentCount": 7,
+        "participants": 3,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 89
+      }
+    },
+    {
+      "number": 917,
+      "title": "[BUG] Super key is not completely overridden / taken over by handy in windows",
+      "url": "https://github.com/cjpais/Handy/issues/917",
+      "author": "DevDeepakBhattarai",
+      "createdAt": "2026-02-28T07:23:11Z",
+      "updatedAt": "2026-04-20T07:49:53Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.3,
+        "severity": 7,
+        "priority": 3.9,
+        "total": 4.4
+      },
+      "rationale": "Severity 7 because the Windows Super key isn't fully captured, so the Start menu pops on release during Super+Space dictation; engagement is minimal (2 comments, 2 participants, 1 maintainer reply, no reactions).",
+      "recommendedAction": "Suppress the Windows/Super keyup so it doesn't reach the OS Start-menu handler when used as part of a Handy shortcut; likely related to #844/#1314.",
+      "signals": {
+        "commentCount": 2,
+        "participants": 2,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 93
+      }
+    },
+    {
+      "number": 844,
+      "title": "[BUG] Can't use Super as a hotkey modifier on Ubuntu",
+      "url": "https://github.com/cjpais/Handy/issues/844",
+      "author": "haferburg",
+      "createdAt": "2026-02-17T16:01:35Z",
+      "updatedAt": "2026-02-28T05:39:36Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 3.5,
+        "severity": 7,
+        "priority": 2,
+        "total": 4.4
+      },
+      "rationale": "Severity 7 because the Super key can't be bound as a modifier on Ubuntu and the CLI toggle does nothing, blocking a desired hotkey; moderate engagement (7 comments, 4 participants, 3 maintainer replies) but priority 2 from no reactions and a stale 93-day update.",
+      "recommendedAction": "Add Super-key capture support to the Linux hotkey backend and fix/verify the `handy --toggle-transcription` CLI command on Ubuntu/GNOME.",
+      "signals": {
+        "commentCount": 7,
+        "participants": 4,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 103
+      }
+    },
+    {
+      "number": 1282,
+      "title": "[BUG] Post-processing never triggers on Linux KDE Wayland (v0.8.2)",
+      "url": "https://github.com/cjpais/Handy/issues/1282",
+      "author": "essoen",
+      "createdAt": "2026-04-12T21:16:27Z",
+      "updatedAt": "2026-04-16T22:08:56Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.3,
+        "severity": 7,
+        "priority": 3.8,
+        "total": 4.3
+      },
+      "rationale": "Severity 7 because post-processing never fires on Linux KDE Wayland (confirmed by $0 API usage), silently skipping a configured feature; engagement is thin (2 comments, 2 participants, 1 maintainer reply, no reactions).",
+      "recommendedAction": "Trace why the post-processing step is skipped on KDE Wayland between transcription and paste, and confirm whether it duplicates the Wayland post-processing failure in #1349's environment class.",
+      "signals": {
+        "commentCount": 2,
+        "participants": 2,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 49
+      }
+    },
+    {
+      "number": 1384,
+      "title": "[Security] Asset Protocol scope allows reading arbitrary files from filesystem",
+      "url": "https://github.com/cjpais/Handy/issues/1384",
+      "author": "phpmac",
+      "createdAt": "2026-05-10T07:42:12Z",
+      "updatedAt": "2026-05-10T07:42:12Z",
+      "labels": [],
+      "scores": {
+        "comments": 0,
+        "severity": 8.5,
+        "priority": 2.6,
+        "total": 4.2
+      },
+      "rationale": "Severity 8.5 because the Tauri assetProtocol scope is `allow:[\"**\"]`, letting the WebView read any file on disk if an XSS is ever introduced; but with zero engagement (0 comments, 0 participants, no maintainer reply, no reactions) priority is only 2.6.",
+      "recommendedAction": "Triage as security: tighten the assetProtocol scope to only the recordings/history directory and add a regression test, since `convertFileSrc()` is used in just one place.",
+      "signals": {
+        "commentCount": 0,
+        "participants": 0,
+        "thumbsUp": 0,
+        "maintainerEngaged": false,
+        "ageDays": 22
+      }
+    },
+    {
+      "number": 1320,
+      "title": "[BUG] MICRO",
+      "url": "https://github.com/cjpais/Handy/issues/1320",
+      "author": "edprojet",
+      "createdAt": "2026-04-21T13:41:40Z",
+      "updatedAt": "2026-04-21T14:23:17Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0.8,
+        "severity": 7,
+        "priority": 3.9,
+        "total": 4.2
+      },
+      "rationale": "Severity 7 because the mic captures nothing despite the overlay appearing (toggle mode, all permissions set) on what was a working setup, but the terse single-reporter report (1 comment, 1 participant, 1 maintainer reply, no reactions) caps total at 4.2.",
+      "recommendedAction": "Ask for handy.log and OS/CPU details, then check for the silent-capture device-selection pattern shared with #806/#1339.",
+      "signals": {
+        "commentCount": 1,
+        "participants": 1,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 40
+      }
+    },
+    {
+      "number": 703,
+      "title": "[BUG] Noticeable delay before Ready beep when non-default output device is selected",
+      "url": "https://github.com/cjpais/Handy/issues/703",
+      "author": "umputun",
+      "createdAt": "2026-02-02T22:49:36Z",
+      "updatedAt": "2026-05-15T23:39:30Z",
+      "labels": [],
+      "scores": {
+        "comments": 2.8,
+        "severity": 4,
+        "priority": 5.8,
+        "total": 4.2
+      },
+      "rationale": "Severity 4 since it's a startup-beep latency annoyance with a known workaround, but priority 5.8 from recency (updated 16 days ago), a self-diagnosed root cause, 5 comments/4 participants, and 1 reaction.",
+      "recommendedAction": "Optimize the output-device enumeration loop in `audio_feedback.rs` (cache or short-circuit on match) so non-default devices don't add 1-2s to the Ready beep.",
+      "signals": {
+        "commentCount": 5,
+        "participants": 4,
+        "thumbsUp": 1,
+        "maintainerEngaged": true,
+        "ageDays": 118
+      }
+    },
+    {
+      "number": 1063,
+      "title": "[BUG] Audio crackling/stuttering in UI feedback during recording lifecycle",
+      "url": "https://github.com/cjpais/Handy/issues/1063",
+      "author": "koloved",
+      "createdAt": "2026-03-16T14:24:54Z",
+      "updatedAt": "2026-03-18T12:22:44Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0.8,
+        "severity": 7,
+        "priority": 3.5,
+        "total": 4.1
+      },
+      "rationale": "Severity 7 likely overstates a cosmetic audio artifact (notification-sound crackling tied to CPU spikes at state transitions); single-reporter engagement (1 comment, 1 participant, 1 reaction) keeps total at 4.1.",
+      "recommendedAction": "Decouple feedback-sound playback from the CPU-heavy transcription start/stop transition (e.g. pre-load/separate thread) to eliminate the crackle.",
+      "signals": {
+        "commentCount": 1,
+        "participants": 1,
+        "thumbsUp": 1,
+        "maintainerEngaged": true,
+        "ageDays": 76
+      }
+    },
+    {
+      "number": 845,
+      "title": "[BUG] Alt+Q specifically triggers the menu in OPERA",
+      "url": "https://github.com/cjpais/Handy/issues/845",
+      "author": "g33khubber",
+      "createdAt": "2026-02-18T01:37:54Z",
+      "updatedAt": "2026-02-23T03:47:34Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 2.5,
+        "severity": 7,
+        "priority": 2,
+        "total": 4.1
+      },
+      "rationale": "Severity 7 because the Alt+Q shortcut triggers Opera's menu (browser-specific conflict), but it's narrow and old (v0.75) with modest engagement (5 comments, 3 participants, 2 maintainer replies, no reactions) and a very stale 98-day update.",
+      "recommendedAction": "Document the Alt+Q/Opera conflict and recommend an alternative binding, or investigate suppressing the Alt keyup; low priority given the app-specific scope.",
+      "signals": {
+        "commentCount": 5,
+        "participants": 3,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 103
+      }
+    },
+    {
+      "number": 1342,
+      "title": "Custom post-processing fails with DeepSeek because reasoning_effort:none is rejected",
+      "url": "https://github.com/cjpais/Handy/issues/1342",
+      "author": "sinco-z",
+      "createdAt": "2026-04-28T16:09:45Z",
+      "updatedAt": "2026-05-16T01:29:55Z",
+      "labels": [],
+      "scores": {
+        "comments": 2.9,
+        "severity": 4,
+        "priority": 4.9,
+        "total": 3.9
+      },
+      "rationale": "Severity 4 because it's a provider-compatibility config bug (DeepSeek rejects `reasoning_effort:none`) with a clear cause from PR #1221, lifted by decent engagement (6 comments, 3 participants, 3 maintainer replies) and recent activity but no reactions.",
+      "recommendedAction": "Make the `reasoning_effort:none` parameter conditional or omittable per-provider so DeepSeek and other OpenAI-compatible endpoints that reject 'none' still work.",
+      "signals": {
+        "commentCount": 6,
+        "participants": 3,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 33
+      }
+    },
+    {
+      "number": 1105,
+      "title": "X11: F13–F24 hotkeys fail with 'Unknown scancode'",
+      "url": "https://github.com/cjpais/Handy/issues/1105",
+      "author": "mgabor3141",
+      "createdAt": "2026-03-20T19:10:11Z",
+      "updatedAt": "2026-05-24T03:12:00Z",
+      "labels": [],
+      "scores": {
+        "comments": 2.4,
+        "severity": 4,
+        "priority": 5.2,
+        "total": 3.9
+      },
+      "rationale": "Severity 4 because it's a missing-keycode mapping (F13-F24 hotkeys fail on X11), but it's well-scoped with an upstream fix and draft PR already linked; priority 5.2 helped by recency (updated 8 days ago) and 4 participants, though no reactions.",
+      "recommendedAction": "Pull the upstream global-hotkey F13-F24 scancode mappings into the cjpais fork (or merge the reporter's draft PR) to register these keys on Linux/X11.",
+      "signals": {
+        "commentCount": 4,
+        "participants": 4,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 72
+      }
+    },
+    {
+      "number": 642,
+      "title": "[BUG] muting the system audio has delay during recording",
+      "url": "https://github.com/cjpais/Handy/issues/642",
+      "author": "edwinencomienda",
+      "createdAt": "2026-01-21T20:10:18Z",
+      "updatedAt": "2026-02-20T00:44:24Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.7,
+        "severity": 7,
+        "priority": 2,
+        "total": 3.9
+      },
+      "rationale": "Severity 7 because mute-system-audio has a perceptible delay during recording (compared to instant in WhisprFlow), a polish issue; very low engagement (3 comments, 2 participants, no reactions) and a stale 101-day update keep priority at 2.",
+      "recommendedAction": "Reduce latency in the macOS mute path during recording start, and consider linking to the broader mute/USB-interface limitations in #998.",
+      "signals": {
+        "commentCount": 3,
+        "participants": 2,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 130
+      }
+    },
+    {
+      "number": 1423,
+      "title": "[BUG] Incorrect system tray icon is used in some scenarios on Windows 11/10",
+      "url": "https://github.com/cjpais/Handy/issues/1423",
+      "author": "binbuf",
+      "createdAt": "2026-05-22T14:45:16Z",
+      "updatedAt": "2026-05-22T14:45:16Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0,
+        "severity": 7,
+        "priority": 3.2,
+        "total": 3.7
+      },
+      "rationale": "Severity 7 for a purely cosmetic wrong tray-icon under custom Windows dark/light personalization; total is 3.7 because it has zero engagement (0 comments, 0 participants, no maintainer reply, no reactions) on a recent report.",
+      "recommendedAction": "Detect the Windows app-mode (not system-mode) color setting when choosing the tray icon variant; low-priority polish fix.",
+      "signals": {
+        "commentCount": 0,
+        "participants": 0,
+        "thumbsUp": 0,
+        "maintainerEngaged": false,
+        "ageDays": 9
+      }
+    },
+    {
+      "number": 1261,
+      "title": "[BUG] Post-processing often misbehaves due to prompt injection by the spoken utterance",
+      "url": "https://github.com/cjpais/Handy/issues/1261",
+      "author": "nicolasff",
+      "createdAt": "2026-04-09T07:56:59Z",
+      "updatedAt": "2026-04-19T19:47:29Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 1.1,
+        "severity": 7,
+        "priority": 1.9,
+        "total": 3.7
+      },
+      "rationale": "Severity 7 because spoken text can prompt-inject the post-processing model and produce wrong output (a real correctness/robustness flaw), but engagement is minimal (2 comments, 2 participants, no maintainer reply, no reactions), dropping priority to 1.9.",
+      "recommendedAction": "Harden the post-processing prompt by clearly delimiting/escaping the transcript as data (e.g. system-prompt framing or fenced input) so utterances can't override instructions.",
+      "signals": {
+        "commentCount": 2,
+        "participants": 2,
+        "thumbsUp": 0,
+        "maintainerEngaged": false,
+        "ageDays": 53
+      }
+    },
+    {
+      "number": 1375,
+      "title": "[BUG] Wayland: recording overlay displayed on secondary monitor",
+      "url": "https://github.com/cjpais/Handy/issues/1375",
+      "author": "tredondo",
+      "createdAt": "2026-05-07T19:47:05Z",
+      "updatedAt": "2026-05-07T19:47:05Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0,
+        "severity": 7,
+        "priority": 2.6,
+        "total": 3.6
+      },
+      "rationale": "Severity 7 because the recording overlay shows on the wrong (secondary) monitor on Wayland, out of the user's focus; zero engagement (0 comments, 0 participants, no maintainer reply, no reactions) keeps total at 3.6.",
+      "recommendedAction": "Fix overlay placement to the active/primary display on Wayland; consolidate with the Windows multi-monitor overlay issue #811 since they share root behavior.",
+      "signals": {
+        "commentCount": 0,
+        "participants": 0,
+        "thumbsUp": 0,
+        "maintainerEngaged": false,
+        "ageDays": 24
+      }
+    },
+    {
+      "number": 1370,
+      "title": "[BUG] Custom post-processing endpoint fails with internal CA certificates",
+      "url": "https://github.com/cjpais/Handy/issues/1370",
+      "author": "luriosolutions",
+      "createdAt": "2026-05-07T09:17:31Z",
+      "updatedAt": "2026-05-07T09:17:31Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0,
+        "severity": 7,
+        "priority": 2.5,
+        "total": 3.6
+      },
+      "rationale": "Severity 7 because custom post-processing endpoints fail with internal/private CA certs (reqwest ignores the OS keychain), blocking enterprise self-hosted setups; but zero engagement (0 comments, 0 participants, no reactions) limits total to 3.6.",
+      "recommendedAction": "Configure reqwest to use the OS native certificate store (e.g. rustls-native-certs) so endpoints trusted by the system keychain work like curl does.",
+      "signals": {
+        "commentCount": 0,
+        "participants": 0,
+        "thumbsUp": 0,
+        "maintainerEngaged": false,
+        "ageDays": 25
+      }
+    },
+    {
+      "number": 1349,
+      "title": "[BUG] Handy occasionally locks up Pipewire on Ubuntu",
+      "url": "https://github.com/cjpais/Handy/issues/1349",
+      "author": "xenotropic",
+      "createdAt": "2026-04-30T00:58:41Z",
+      "updatedAt": "2026-04-30T00:58:41Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0,
+        "severity": 7,
+        "priority": 2.3,
+        "total": 3.5
+      },
+      "rationale": "Severity 7 because Handy occasionally locks up PipeWire on Ubuntu (stuck listening/processing until PipeWire restart), but it's intermittent with zero engagement (0 comments, 0 participants, no maintainer reply, no reactions), capping total at 3.5.",
+      "recommendedAction": "Ask for handy.log from a stuck state and investigate audio stream cleanup on PipeWire; likely related to the Linux stuck-transcription issues #1228 and #806.",
+      "signals": {
+        "commentCount": 0,
+        "participants": 0,
+        "thumbsUp": 0,
+        "maintainerEngaged": false,
+        "ageDays": 32
+      }
+    },
+    {
+      "number": 1314,
+      "title": "[BUG] key-bindings not passing through Handy",
+      "url": "https://github.com/cjpais/Handy/issues/1314",
+      "author": "mynameistito",
+      "createdAt": "2026-04-20T04:13:21Z",
+      "updatedAt": "2026-04-20T06:52:24Z",
+      "labels": [
+        "bug"
+      ],
+      "scores": {
+        "comments": 0,
+        "severity": 7,
+        "priority": 1.9,
+        "total": 3.4
+      },
+      "rationale": "Severity 7 because Handy hijacks key-binding presses on Windows even with handy-keys (extending #955/#1174), but priority is low (1.9) from zero engagement (0 comments, 0 participants, no maintainer reply, no reactions).",
+      "recommendedAction": "Investigate the Windows key-passthrough behavior for modifier-combo bindings and consolidate with the related hotkey-hijack reports #1315, #917, and #955.",
+      "signals": {
+        "commentCount": 0,
+        "participants": 0,
+        "thumbsUp": 0,
+        "maintainerEngaged": false,
+        "ageDays": 42
+      }
+    },
+    {
+      "number": 1371,
+      "title": "[BUG] Recording Overlay renderer pegs ~92% of one CPU core when laptop lid closes (Modern Standby, single display)",
+      "url": "https://github.com/cjpais/Handy/issues/1371",
+      "author": "kartas39",
+      "createdAt": "2026-05-07T11:47:51Z",
+      "updatedAt": "2026-05-16T00:29:14Z",
+      "labels": [],
+      "scores": {
+        "comments": 0.8,
+        "severity": 4,
+        "priority": 4.9,
+        "total": 3.3
+      },
+      "rationale": "Severity 4 because it's a power/CPU drain (WebView2 overlay pegs ~92% of a core under Modern Standby with lid closed), serious for battery but not data loss; priority 4.9 helped by a thorough self-diagnosis and recent activity despite single-reporter engagement (1 comment, no reactions).",
+      "recommendedAction": "Pause or suspend the overlay WebView2 render loop when the display powers off under Modern Standby; likely shares root cause with the idle-CPU issue #1418.",
+      "signals": {
+        "commentCount": 1,
+        "participants": 1,
+        "thumbsUp": 0,
+        "maintainerEngaged": true,
+        "ageDays": 24
+      }
+    },
+    {
+      "number": 1458,
+      "title": "Feature: Add SenseVoice/FunASR as alternative STT engine",
+      "url": "https://github.com/cjpais/Handy/issues/1458",
+      "author": "LauraGPT",
+      "createdAt": "2026-05-31T12:08:14Z",
+      "updatedAt": "2026-05-31T13:01:46Z",
+      "labels": [],
+      "scores": {
+        "comments": 0.6,
+        "severity": 4,
+        "priority": 3.5,
+        "total": 2.8
+      },
+      "rationale": "Low total (2.8) because it's a brand-new enhancement request (add SenseVoice/FunASR as an STT engine) with no severity impact and essentially no engagement (1 comment, 1 participant, no maintainer reply, no reactions) on a 0-day-old issue.",
+      "recommendedAction": "Label as enhancement and defer; evaluate SenseVoice's licensing and Rust/ONNX integration feasibility against existing Whisper/Parakeet engines when bandwidth allows.",
+      "signals": {
+        "commentCount": 1,
+        "participants": 1,
+        "thumbsUp": 0,
+        "maintainerEngaged": false,
+        "ageDays": 0
+      }
+    },
+    {
+      "number": 1387,
+      "title": "Overlay pulls focus to its launch workspace when triggered from another Space (macOS multi-Space / AeroSpace)",
+      "url": "https://github.com/cjpais/Handy/issues/1387",
+      "author": "fvnky07",
+      "createdAt": "2026-05-10T15:21:15Z",
+      "updatedAt": "2026-05-10T15:21:15Z",
+      "labels": [],
+      "scores": {
+        "comments": 0,
+        "severity": 4,
+        "priority": 2.7,
+        "total": 2.4
+      },
+      "rationale": "Severity 4 (a focus-stealing annoyance with multi-Space/AeroSpace on macOS) and zero engagement (0 comments, 0 participants, no maintainer reply, no reactions) put this near the bottom at 2.4.",
+      "recommendedAction": "Set the overlay window to appear on all Spaces (NSWindowCollectionBehavior canJoinAllSpaces) so triggering from another Space doesn't yank focus back to its launch workspace.",
+      "signals": {
+        "commentCount": 0,
+        "participants": 0,
+        "thumbsUp": 0,
+        "maintainerEngaged": false,
+        "ageDays": 21
+      }
+    },
+    {
+      "number": 1339,
+      "title": "[BUG] Microphone not detected on Linux — sof-hda-dsp (hw:0,7) works in Vocalinux but Handy only shows \"Default\"",
+      "url": "https://github.com/cjpais/Handy/issues/1339",
+      "author": "avinashkanaujiya",
+      "createdAt": "2026-04-28T09:07:23Z",
+      "updatedAt": "2026-04-28T09:07:23Z",
+      "labels": [],
+      "scores": {
+        "comments": 0,
+        "severity": 4,
+        "priority": 2.2,
+        "total": 2.3
+      },
+      "rationale": "Severity 4 for a single-machine mic-enumeration gap (Handy only shows 'Default' while Vocalinux sees the device), ranked last (2.3) due to zero engagement (0 comments, 0 participants, no maintainer reply, no reactions) on a stale 34-day report.",
+      "recommendedAction": "Compare how Vocalinux enumerates ALSA/PipeWire devices and expand Handy's device listing to include hardware inputs like sof-hda-dsp (hw:0,7); likely related to #806 and #1313.",
+      "signals": {
+        "commentCount": 0,
+        "participants": 0,
+        "thumbsUp": 0,
+        "maintainerEngaged": false,
+        "ageDays": 34
+      }
+    }
+  ]
+}

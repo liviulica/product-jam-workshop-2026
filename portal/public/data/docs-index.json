@@ -1,0 +1,68 @@
+{
+  "generatedAt": "2026-06-01T10:20:28Z",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Architecture Overview",
+      "file": "overview.md",
+      "category": "Getting Started",
+      "order": 1
+    },
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "file": "frontend.md",
+      "category": "Frontend",
+      "order": 2
+    },
+    {
+      "id": "backend",
+      "title": "Backend (Rust / Tauri)",
+      "file": "backend.md",
+      "category": "Backend",
+      "order": 3
+    },
+    {
+      "id": "audio-pipeline",
+      "title": "Audio Pipeline",
+      "file": "audio-pipeline.md",
+      "category": "Backend",
+      "order": 4
+    },
+    {
+      "id": "settings-and-storage",
+      "title": "Settings & Storage",
+      "file": "settings-and-storage.md",
+      "category": "Backend",
+      "order": 5
+    },
+    {
+      "id": "shortcuts-and-input",
+      "title": "Shortcuts & Input",
+      "file": "shortcuts-and-input.md",
+      "category": "Backend",
+      "order": 6
+    },
+    {
+      "id": "post-processing",
+      "title": "Post-Processing",
+      "file": "post-processing.md",
+      "category": "Backend",
+      "order": 7
+    },
+    {
+      "id": "build-and-release",
+      "title": "Build & Release",
+      "file": "build-and-release.md",
+      "category": "Operations",
+      "order": 8
+    },
+    {
+      "id": "contributing",
+      "title": "Contributing & Extending",
+      "file": "contributing.md",
+      "category": "Operations",
+      "order": 9
+    }
+  ]
+}
