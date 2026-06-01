@@ -1,6 +1,7 @@
-# Handy Portal: Prompts
+# 02 · Generated Prompts
 
-This file collects every prompt used to build and run the Handy portal, so they can be reviewed or re-used.
+The prompts Claude produced in response to [01-initial-prompt.md](01-initial-prompt.md):
+every prompt used to build and run the Handy portal, so they can be reviewed or re-used.
 
 - **Prompt A** builds the portal one time.
 - **Prompts B1 to B5** are the durable `/h:` slash-command files (saved under `.claude/commands/h/`).

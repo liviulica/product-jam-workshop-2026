@@ -24,8 +24,10 @@ The design is deliberately simple: **the `/h:` commands are data generators, the
 ├── portal/                  # Vite + React + TS + Tailwind v4 app
 │   ├── src/                 # pages, components, typed data loaders
 │   └── public/data/         # the data contract (JSON + docs markdown)
-├── HANDY-PORTAL-PLAN.md     # the implementation plan
-└── HANDY-PORTAL-PROMPTS.md  # all prompts (portal build + the 5 commands)
+└── prompts/                 # how this was built, in order
+    ├── 01-initial-prompt.md     # the original request
+    ├── 02-generated-prompts.md  # all prompts (portal build + the 5 commands)
+    └── 03-plan.md               # the implementation plan
 ```
 
 `Handy/` (a clone of `cjpais/Handy`) is intentionally **not** committed. Clone it yourself next to this project so the commands can read its source (see below).
@@ -76,4 +78,4 @@ Then reload the browser. No rebuild needed.
 
 Each command (in `.claude/commands/h/`) uses `gh` and/or web search to gather data, then writes JSON or Markdown into `portal/public/data/` and stamps `meta.json` with a fresh timestamp. The portal reads those files at runtime via typed loaders in [`portal/src/lib/data.ts`](portal/src/lib/data.ts), falling back to a friendly empty state when a file is missing.
 
-The full prompts are documented in [HANDY-PORTAL-PROMPTS.md](HANDY-PORTAL-PROMPTS.md).
+The full prompts are documented in [prompts/02-generated-prompts.md](prompts/02-generated-prompts.md), alongside the [original request](prompts/01-initial-prompt.md) and the [implementation plan](prompts/03-plan.md).

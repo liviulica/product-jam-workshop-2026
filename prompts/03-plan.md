@@ -1,4 +1,7 @@
-# Handy Portal: Implementation Plan
+# 03 · Implementation Plan
+
+The plan Claude wrote (from [01-initial-prompt.md](01-initial-prompt.md)) before building,
+with the prompt bodies in [02-generated-prompts.md](02-generated-prompts.md).
 
 ## Context
 
@@ -32,8 +35,10 @@ Core design decision: **the `/h:` slash commands are data generators, the portal
 
 ```
 product-jam/
-  HANDY-PORTAL-PLAN.md             # this file
-  HANDY-PORTAL-PROMPTS.md          # the saved prompts (reference)
+  prompts/
+    01-initial-prompt.md           # the original request
+    02-generated-prompts.md        # the saved prompts (reference)
+    03-plan.md                     # this file
   .claude/commands/h/              # the durable /h: prompts
     release-notes.md  docs.md  prioritize.md  competition.md  update-all.md
   portal/                          # Vite + React + TS + Tailwind v4
@@ -51,11 +56,11 @@ product-jam/
 
 ## Step 1: Save the prompts and this plan to the project root
 
-`HANDY-PORTAL-PLAN.md` (this file) and `HANDY-PORTAL-PROMPTS.md` (Prompt A + the five command bodies) live at the project root as reference docs.
+`prompts/03-plan.md` (this file) and `prompts/02-generated-prompts.md` (Prompt A + the five command bodies) live in the `prompts/` folder as reference docs.
 
 ## Step 2: Create the five `/h:` command files
 
-Markdown files under `.claude/commands/h/` (full bodies in `HANDY-PORTAL-PROMPTS.md`):
+Markdown files under `.claude/commands/h/` (full bodies in `prompts/02-generated-prompts.md`):
 `release-notes.md`, `docs.md`, `prioritize.md`, `competition.md`, `update-all.md`. Each uses `gh`/web tools, writes its JSON into `portal/public/data/`, and stamps `meta.json`.
 
 ## Step 3: Scaffold the portal
