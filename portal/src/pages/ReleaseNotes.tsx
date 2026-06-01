@@ -46,6 +46,11 @@ export default function ReleaseNotes() {
   const builders = showAllBuilders
     ? data.leaderboard
     : data.leaderboard.slice(0, TOP_BUILDERS);
+  const [champion, ...rest] = builders;
+  const championPct =
+    champion && champion.additions + champion.deletions
+      ? (champion.additions / (champion.additions + champion.deletions)) * 100
+      : 0;
 
   return (
     <div>
@@ -77,39 +82,94 @@ export default function ReleaseNotes() {
               <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
                 Builders ({data.leaderboard.length})
               </h2>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {builders.map((b, i) => (
-                  <a
-                    key={b.login}
-                    href={`https://github.com/${b.login}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-3 rounded-xl border border-zinc-200 p-3 hover:border-indigo-400 dark:border-zinc-800"
-                  >
-                    <span className="w-6 text-center text-lg">{medal(i)}</span>
+              {champion && (
+                <a
+                  href={`https://github.com/${champion.login}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative mb-3 flex flex-col gap-4 overflow-hidden rounded-2xl border border-amber-300/70 bg-gradient-to-br from-amber-50 via-amber-50/40 to-transparent p-5 transition hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/10 sm:flex-row sm:items-center sm:gap-5 dark:border-amber-500/30 dark:from-amber-500/[0.12] dark:via-amber-500/[0.04] dark:to-transparent"
+                >
+                  <div className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full bg-amber-400/20 blur-3xl transition group-hover:bg-amber-400/30 dark:bg-amber-500/10" />
+                  <div className="relative shrink-0">
                     <img
-                      src={avatarUrl(b.login)}
-                      alt={b.login}
-                      className="h-9 w-9 rounded-full bg-zinc-200"
+                      src={avatarUrl(champion.login)}
+                      alt={champion.login}
+                      className="h-16 w-16 rounded-full bg-zinc-200 ring-2 ring-amber-400/80"
                     />
-                    <div className="min-w-0">
-                      <div className="truncate text-sm font-medium">
-                        {b.name || b.login}
-                      </div>
-                      <div className="text-xs text-zinc-500">
-                        {b.count} PR{b.count === 1 ? "" : "s"}
-                      </div>
-                      <div className="mt-0.5 font-mono text-[11px]">
-                        <span className="text-emerald-600 dark:text-emerald-400">
-                          +{fmt(b.additions)}
-                        </span>{" "}
-                        <span className="text-red-500 dark:text-red-400">
-                          −{fmt(b.deletions)}
-                        </span>
-                      </div>
+                    <span className="absolute -left-2.5 -top-3 text-2xl drop-shadow-sm">
+                      👑
+                    </span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[11px] font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                      🥇 Top contributor
                     </div>
-                  </a>
-                ))}
+                    <div className="mt-0.5 truncate text-lg font-bold tracking-tight">
+                      {champion.name || champion.login}
+                    </div>
+                    <div className="truncate text-xs text-zinc-500">
+                      @{champion.login} · {champion.count} PR
+                      {champion.count === 1 ? "" : "s"} merged
+                    </div>
+                  </div>
+                  <div className="shrink-0 sm:text-right">
+                    <div className="font-mono text-sm font-medium">
+                      <span className="text-emerald-600 dark:text-emerald-400">
+                        +{fmt(champion.additions)}
+                      </span>{" "}
+                      <span className="text-red-500 dark:text-red-400">
+                        −{fmt(champion.deletions)}
+                      </span>
+                    </div>
+                    <div className="mt-1.5 flex h-1.5 w-full overflow-hidden rounded-full bg-zinc-200 sm:ml-auto sm:w-44 dark:bg-zinc-700">
+                      <div
+                        className="bg-emerald-500"
+                        style={{ width: `${championPct}%` }}
+                      />
+                      <div className="flex-1 bg-red-400" />
+                    </div>
+                    <div className="mt-1 text-[11px] text-zinc-400">
+                      {fmt(champion.additions + champion.deletions)} lines changed
+                    </div>
+                  </div>
+                </a>
+              )}
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {rest.map((b, idx) => {
+                  const i = idx + 1;
+                  return (
+                    <a
+                      key={b.login}
+                      href={`https://github.com/${b.login}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-3 rounded-xl border border-zinc-200 p-3 hover:border-indigo-400 dark:border-zinc-800"
+                    >
+                      <span className="w-6 text-center text-lg">{medal(i)}</span>
+                      <img
+                        src={avatarUrl(b.login)}
+                        alt={b.login}
+                        className="h-9 w-9 rounded-full bg-zinc-200"
+                      />
+                      <div className="min-w-0">
+                        <div className="truncate text-sm font-medium">
+                          {b.name || b.login}
+                        </div>
+                        <div className="text-xs text-zinc-500">
+                          {b.count} PR{b.count === 1 ? "" : "s"}
+                        </div>
+                        <div className="mt-0.5 font-mono text-[11px]">
+                          <span className="text-emerald-600 dark:text-emerald-400">
+                            +{fmt(b.additions)}
+                          </span>{" "}
+                          <span className="text-red-500 dark:text-red-400">
+                            −{fmt(b.deletions)}
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
               {data.leaderboard.length > TOP_BUILDERS && (
                 <button
