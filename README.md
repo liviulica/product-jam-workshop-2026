@@ -1,6 +1,8 @@
 # Product Jam Workshop 2026
 
-A local **portal** for the open-source [Handy](https://github.com/cjpais/Handy) project (a Tauri speech-to-text app), built during the Product Jam workshop. It turns raw GitHub activity and source code into four always-current views, refreshed by a set of `/h:` Claude Code slash commands.
+A **portal** for the open-source [Handy](https://github.com/cjpais/Handy) project (a Tauri speech-to-text app), built during the Product Jam workshop. It turns raw GitHub activity and source code into four always-current views, refreshed by a set of `/h:` Claude Code slash commands.
+
+🔗 **Live site:** [liviulica.github.io/product-jam-workshop-2026](https://liviulica.github.io/product-jam-workshop-2026/) (auto-deployed from `main` via GitHub Pages)
 
 ## What it does
 
@@ -30,13 +32,24 @@ The design is deliberately simple: **the `/h:` commands are data generators, the
 
 ## Prerequisites
 
-- Node.js 18+ and npm
-- [`gh`](https://cli.github.com/) (GitHub CLI), authenticated (`gh auth login`) with `repo` scope, for the release-notes and prioritize commands
-- [Claude Code](https://claude.com/claude-code) to run the `/h:` commands
-- A local clone of Handy for `/h:docs`:
+There are two tiers, depending on what you want to do.
+
+**To view the portal** (it renders the committed data out of the box):
+
+- **Node.js 20+ and npm.** Vite 6 needs Node 18.18+, 20+, or 22+.
+
+**To regenerate the data** with the `/h:` commands:
+
+- **[Claude Code](https://claude.com/claude-code)** — runs the `/h:` slash commands in `.claude/commands/h/`.
+- **[`gh`](https://cli.github.com/) (GitHub CLI), authenticated** with `repo` scope (`gh auth login`) — used by `/h:release-notes` and `/h:prioritize`.
+- **Web access** (WebSearch / WebFetch) — used by `/h:competition`.
+- **A local clone of Handy**, for `/h:docs` (it reads the real source):
   ```bash
   git clone https://github.com/cjpais/Handy.git
   ```
+
+> [!NOTE]
+> No Python, no API keys, no env vars, and no Tailwind/PostCSS config are required — for either tier. The data files under `portal/public/data/` are committed, so you can run the portal and see real release notes, docs, and the builders leaderboard **without running any command**. The `/h:` commands are only needed to refresh that data.
 
 ## Run the portal
 
