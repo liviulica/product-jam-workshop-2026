@@ -63,6 +63,23 @@ On macOS, a cmake version error can be worked around with (per `Handy/AGENTS.md`
 CMAKE_POLICY_VERSION_MINIMUM=3.5 bun run tauri dev
 ```
 
+#### Intel Macs (x86_64)
+
+`ort-sys` ships no prebuilt ONNX Runtime binaries for `x86_64-apple-darwin`, so on an Intel Mac the build fails out of the box. Per `Handy/BUILD.md`, install ONNX Runtime via Homebrew and link against it dynamically by exporting `ORT_LIB_LOCATION` and `ORT_PREFER_DYNAMIC_LINK`:
+
+```bash
+brew install onnxruntime
+ORT_LIB_LOCATION=$(brew --prefix onnxruntime)/lib ORT_PREFER_DYNAMIC_LINK=1 bun run tauri dev
+```
+
+The same environment variables apply to a production build:
+
+```bash
+ORT_LIB_LOCATION=$(brew --prefix onnxruntime)/lib ORT_PREFER_DYNAMIC_LINK=1 bun run tauri build
+```
+
+Apple Silicon Macs do not need this; their target (`aarch64-apple-darwin`) has prebuilt ONNX Runtime binaries. This mirrors what CI already does for the `x86_64-apple-darwin` matrix entry (ONNX Runtime download + bundling on x64 macOS — see the CI section below).
+
 ### Frontend-only development
 
 ```bash

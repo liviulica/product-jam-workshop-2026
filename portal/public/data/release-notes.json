@@ -1,12 +1,25 @@
 {
-  "generatedAt": "2026-06-01T10:24:57Z",
+  "generatedAt": "2026-06-10T13:32:04Z",
   "range": {
-    "since": "2026-02-21T00:00:00Z",
-    "until": "2026-06-01T10:24:57Z",
+    "since": "2026-03-02T00:00:00Z",
+    "until": "2026-06-10T13:32:04Z",
     "label": "Last 100 days"
   },
-  "summary": "## 92 improvements landed in the last 100 days 🎉\n\nIt's been a busy few months for Handy, the free, open-source app that turns your speech into text. **41 people** from around the world pitched in, and the focus was clear: make Handy more reliable, work better on every operating system, and speak more languages. Here's the plain-English rundown.\n\n### ✨ What's new\n- **More languages to dictate in.** Added a dedicated Russian speech engine and support for NVIDIA's new high-accuracy model.\n- **Smarter cleanup of your text.** You can now connect Handy to more AI services (including Amazon and Cohere) to polish transcripts, and there's a new setting that makes local AI respond faster.\n- **Lighter on your computer.** Handy can now free up memory when you're not using it, dropping idle usage from over a gigabyte to a tiny fraction of that.\n- **Handier little touches.** Switch transcription models straight from the menu-bar icon, teach Handy your custom words so it spells them right, and turn on a \"portable\" install on Windows that keeps everything in one folder.\n\n### 🔧 Things we fixed\n- **Your recordings are safer.** Audio is now saved before it's transcribed, so a hiccup mid-process no longer loses your words, and you can retry from your history.\n- **Fewer crashes and freezes.** Fixed an issue that made the app vanish with no way to bring it back, a crash on older computers, and a bug that cut off longer recordings.\n- **Clearer when something's wrong.** Handy now shows a friendly \"No microphone found\" message instead of failing silently.\n- **The pop-up overlay behaves.** It now appears correctly on second monitors and plays nicely with more Linux desktops.\n- **A privacy fix.** Your cloud AI keys are no longer written into log files.\n\n### 🌍 More languages\nHandy now speaks **Hebrew** (with full right-to-left support), **Bulgarian**, and **Swedish**, and got quality polish for Russian, German, Italian, and Chinese.\n\n### 🛠️ Behind the scenes\nLots of less-visible work to keep Handy healthy: faster automated checks (from ~30 minutes down to about a minute), updated core libraries, and a big effort to make Handy easy to install on NixOS/Linux. In total this period changed about **13,362 lines added and 3,604 removed** across the project.\n\n### 👏 Who built it\nHuge thanks to **CJ Pais** (the maintainer, most active by far), **Evgeny Khudoba** (who led the Linux/NixOS packaging push), **Viren Mohindra** (automation and audio), and **Fero** (microphone reliability), along with dozens of other contributors who fixed bugs and added translations.",
+  "summary": "## 85 improvements landed in the last 100 days 🎉\n\nIt's been a busy stretch for Handy, the free, open-source app that turns your speech into text. Dozens of contributors from around the world pitched in, and the focus was clear: **stop losing people's recordings, work reliably on every operating system, and speak more languages.** Here's the plain-English rundown.\n\n### ✨ What's new\n\n- **Three new languages.** Handy now speaks **Hebrew** (with full right-to-left support), **Bulgarian**, and **Swedish**.\n- **More AI cleanup options.** You can now connect Handy to **Cohere** and **Amazon's AI service** to polish your transcripts, and local AI now responds faster by skipping its slow \"thinking\" step.\n- **Teach Handy your words.** Add custom words so tricky names and terms get spelled the way you mean, and filler words like \"um\" are only stripped out in languages where they're actually filler.\n- **Handier everyday touches.** Switch transcription models straight from the menu-bar icon, pick between processor or graphics-card acceleration, and turn on a **portable install on Windows** that keeps everything in one folder.\n\n### 🔧 Things we fixed\n\n- **Your recordings are safe now.** Audio is saved **before** it's transcribed, so a hiccup mid-process no longer loses your words, and you can retry from your history.\n- **No more stuck downloads.** A long-standing bug that trapped some users in an endless, corrupted-download loop is gone.\n- **Fewer crashes.** Fixed a crash on older computers, stopped the app from crashing when a microphone is blocked, and made it shut down gracefully instead of vanishing.\n- **Nothing gets clipped.** Added a recording buffer and stopped audio from being dropped, so the start and end of what you say are captured.\n- **Clearer when something's wrong.** Handy now shows a friendly **\"No microphone found\"** message instead of failing silently.\n- **The pop-up overlay behaves.** It now appears on the correct screen in multi-monitor setups on both Windows and Linux.\n- **A data-safety fix on Windows.** Certain installs no longer wipe your settings on every update.\n\n### 🪶 Lighter on your computer\n\n- Handy can now **free up memory when you're not using it**, dropping idle usage from over a gigabyte to a tiny fraction of that. Startup is quicker too.\n\n### 🔒 A privacy fix\n\n- Your cloud AI keys are **no longer written into log files**.\n\n### 🌍 More languages polished\n\nAlongside the three new languages, there was quality polish for **German, Italian, Russian, and Chinese**.\n\n### 🛠️ Behind the scenes\n\nLots of less-visible work to keep Handy healthy: automated checks are now far faster (from about 30 minutes down to roughly a minute), every change to the main code is now automatically built and testable, core engines and libraries were updated, and there was a big push to make Handy install cleanly on Linux and NixOS. The docs also gained clearer setup guides for Intel Macs, Windows (winget), Homebrew, and Linux troubleshooting.\n\n### 👏 Who built it\n\nHuge thanks to **CJ Pais** (the maintainer, most active by far), **Evgeny Khudoba** (who led the Linux/NixOS packaging push), **Viren Mohindra** (audio and automation), and **Fero** (microphone reliability and safer recordings), along with dozens of other contributors who fixed bugs and added translations.\n",
   "prs": [
+    {
+      "number": 1471,
+      "title": "docs: add Intel Mac (x86_64) build instructions",
+      "type": "docs",
+      "author": {
+        "login": "teremo4ek",
+        "name": "ybely"
+      },
+      "mergedAt": "2026-06-05T01:22:16Z",
+      "url": "https://github.com/cjpais/Handy/pull/1471",
+      "description": "Adds BUILD.md instructions for building on Intel (x86_64) Macs, where ONNX Runtime has no prebuilt binaries: install onnxruntime via Homebrew and set the dynamic-linking environment variables.",
+      "labels": []
+    },
     {
       "number": 1422,
       "title": "docs: complete Portuguese translation for portable updates",
@@ -17,7 +30,7 @@
       },
       "mergedAt": "2026-05-23T04:05:16Z",
       "url": "https://github.com/cjpais/Handy/pull/1422",
-      "description": "Completes the Portuguese (pt) translation by filling in the previously untranslated strings for the portable-update flow.",
+      "description": "Completes the Portuguese translation by filling in the remaining untranslated strings for the portable-update flow.",
       "labels": []
     },
     {
@@ -30,7 +43,7 @@
       },
       "mergedAt": "2026-05-23T04:03:40Z",
       "url": "https://github.com/cjpais/Handy/pull/1426",
-      "description": "Documents a known Linux issue where the recording overlay window intercepts focus and blocks pasting transcribed text, and adds the workaround (set Overlay Position to None, enable audio feedback) to the README's Known Issues section.",
+      "description": "Documents a known Linux issue where the recording overlay interferes with pasting transcribed text, along with the simple workaround (disable the overlay, enable audio feedback).",
       "labels": []
     },
     {
@@ -43,7 +56,7 @@
       },
       "mergedAt": "2026-05-13T12:28:54Z",
       "url": "https://github.com/cjpais/Handy/pull/1392",
-      "description": "Removes the redundant --prefix LD_LIBRARY_PATH from the Nix wrapper since vulkan-loader and onnxruntime are already on the runtime path.",
+      "description": "Drops a redundant library-path wrapper prefix in the Nix packaging; cleanup with no behavior change.",
       "labels": []
     },
     {
@@ -56,7 +69,7 @@
       },
       "mergedAt": "2026-05-12T06:45:53Z",
       "url": "https://github.com/cjpais/Handy/pull/1393",
-      "description": "Rewrites the contributor/agent guidance in a more mandatory, prescriptive style so AI coding assistants reliably follow the project's GitHub workflow rules.",
+      "description": "Rewrites the AI-assistant contributor guidance so the GitHub workflow rules are concrete and actionable.",
       "labels": []
     },
     {
@@ -69,7 +82,7 @@
       },
       "mergedAt": "2026-04-30T00:46:24Z",
       "url": "https://github.com/cjpais/Handy/pull/1335",
-      "description": "Drops the custom installPhase and preBuild from the Nix flake because cargo-tauri.hook already provides that build/install behaviour, reducing duplication.",
+      "description": "Removes build phases in the Nix flake that were already provided by the cargo-tauri hook.",
       "labels": []
     },
     {
@@ -82,7 +95,7 @@
       },
       "mergedAt": "2026-04-27T05:27:18Z",
       "url": "https://github.com/cjpais/Handy/pull/1316",
-      "description": "Fixes the macOS nixpkgs build where swiftc emitted a duplicate _main symbol into the Apple Intelligence bridge by compiling with -parse-as-library.",
+      "description": "Fixes the macOS Nix build so Handy can be packaged for nixpkgs.",
       "labels": []
     },
     {
@@ -95,7 +108,7 @@
       },
       "mergedAt": "2026-04-24T09:51:40Z",
       "url": "https://github.com/cjpais/Handy/pull/1330",
-      "description": "Adds a code comment above the 'Microphone stream initialized' log clarifying that the reported elapsed time covers cpal's stream.play() returning; no behaviour change.",
+      "description": "Adds a code comment clarifying what the microphone-initialization timing log actually measures; documentation only, no behavior change.",
       "labels": []
     },
     {
@@ -108,7 +121,7 @@
       },
       "mergedAt": "2026-04-19T13:32:12Z",
       "url": "https://github.com/cjpais/Handy/pull/1256",
-      "description": "Adds scripts to normalize bun's node_modules into a byte-identical, reproducible layout required by the upstream nixpkgs fixed-output derivation.",
+      "description": "Adds scripts to normalize bun node_modules, needed for the upstream nixpkgs packaging effort.",
       "labels": []
     },
     {
@@ -121,7 +134,7 @@
       },
       "mergedAt": "2026-04-15T23:06:59Z",
       "url": "https://github.com/cjpais/Handy/pull/1255",
-      "description": "Replaces hand-set LIBCLANG_PATH and BINDGEN_EXTRA_CLANG_ARGS with rustPlatform.bindgenHook in the Nix build, avoiding a class of Vulkan bindgen breakage.",
+      "description": "Uses the standard bindgen hook instead of manually setting clang include args in the Nix build.",
       "labels": []
     },
     {
@@ -134,7 +147,7 @@
       },
       "mergedAt": "2026-04-14T22:58:17Z",
       "url": "https://github.com/cjpais/Handy/pull/1292",
-      "description": "Improves the German (de) translation, filling in untranslated portable-update strings and fixing several wording and quality issues.",
+      "description": "Improves the quality of the German translation.",
       "labels": []
     },
     {
@@ -147,7 +160,7 @@
       },
       "mergedAt": "2026-04-13T22:48:00Z",
       "url": "https://github.com/cjpais/Handy/pull/1288",
-      "description": "Adds AWS Bedrock (Mantle) as a selectable post-processing provider for transcript cleanup.",
+      "description": "Adds Amazon Bedrock as a cloud provider option for AI post-processing of transcripts.",
       "labels": []
     },
     {
@@ -160,7 +173,7 @@
       },
       "mergedAt": "2026-04-11T12:08:11Z",
       "url": "https://github.com/cjpais/Handy/pull/1272",
-      "description": "Merges CLAUDE.md and AGENTS.md into a single source of truth (AGENTS.md) to eliminate duplication and inconsistency in the AI-agent instructions.",
+      "description": "Merges the two AI-agent instruction files (CLAUDE.md and AGENTS.md) into a single source to remove duplication.",
       "labels": []
     },
     {
@@ -173,20 +186,20 @@
       },
       "mergedAt": "2026-04-11T07:22:12Z",
       "url": "https://github.com/cjpais/Handy/pull/1269",
-      "description": "Parses the HANDY_NO_GTK_LAYER_SHELL env var as a proper boolean so values like 0/false/no no longer accidentally disable the GTK layer shell. Follow-up to #1121.",
+      "description": "Makes the Linux overlay environment toggle parse as a proper boolean, following up on the GTK layer-shell fix.",
       "labels": []
     },
     {
       "number": 1246,
       "title": "query gpu async",
-      "type": "other",
+      "type": "perf",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-04-11T01:37:39Z",
       "url": "https://github.com/cjpais/Handy/pull/1246",
-      "description": "Makes the whisper.cpp GPU query asynchronous instead of running it synchronously so it no longer blocks. Relates to #1207.",
+      "description": "Makes the GPU capability query for whisper.cpp run asynchronously so it no longer blocks the app while starting up.",
       "labels": []
     },
     {
@@ -199,20 +212,20 @@
       },
       "mergedAt": "2026-04-11T01:25:35Z",
       "url": "https://github.com/cjpais/Handy/pull/1266",
-      "description": "Adds a Linux startup troubleshooting section to the README documenting the HANDY_NO_GTK_LAYER_SHELL env var. Follow-up to #1121.",
+      "description": "Adds a Linux startup-troubleshooting section to the README, including the environment toggle for the overlay.",
       "labels": []
     },
     {
       "number": 1121,
       "title": "Fix (linux) overlay problem in kde",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "vpsone",
-        "name": ""
+        "name": "vpsone"
       },
       "mergedAt": "2026-04-11T01:25:24Z",
       "url": "https://github.com/cjpais/Handy/pull/1121",
-      "description": "Fixes the recording overlay on Linux/KDE, adding a HANDY_NO_GTK_LAYER_SHELL escape hatch for compositors where the GTK layer shell misbehaves.",
+      "description": "Fixes the recording overlay on Linux/KDE by adding an environment toggle to disable GTK layer-shell when it misbehaves.",
       "labels": []
     },
     {
@@ -225,33 +238,33 @@
       },
       "mergedAt": "2026-04-07T07:19:40Z",
       "url": "https://github.com/cjpais/Handy/pull/1221",
-      "description": "Adds a reasoning_effort passthrough so local post-processing models (e.g. Gemma/Qwen via Ollama) can skip thinking mode, cutting latency for simple transcript cleanup.",
+      "description": "Lets users pass a reasoning-effort setting to local post-processing models so they skip slow 'thinking' mode and respond faster.",
       "labels": []
     },
     {
       "number": 1226,
       "title": "nix: set ALSA_PLUGIN_DIR via symlinkJoin",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "yuxqiu",
         "name": "Yuxiang Qiu"
       },
       "mergedAt": "2026-04-05T10:15:59Z",
       "url": "https://github.com/cjpais/Handy/pull/1226",
-      "description": "Uses a symlinkJoin to expose a single ALSA_PLUGIN_DIR directory, fixing zero-audio failures on non-NixOS home-manager setups where a colon-separated plugin list broke ALSA.",
+      "description": "Fixes an audio error on non-NixOS home-manager setups by presenting the ALSA plugins through a single joined directory.",
       "labels": []
     },
     {
       "number": 1176,
       "title": "fix crash on old cpus",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-04-02T00:20:28Z",
       "url": "https://github.com/cjpais/Handy/pull/1176",
-      "description": "Fixes a crash on older CPUs, likely from missing instruction-set support.",
+      "description": "Fixes a crash on older CPUs that lack certain CPU instruction sets.",
       "labels": []
     },
     {
@@ -260,24 +273,24 @@
       "type": "other",
       "author": {
         "login": "albanobattistella",
-        "name": ""
+        "name": "albanobattistella"
       },
       "mergedAt": "2026-04-01T22:46:40Z",
       "url": "https://github.com/cjpais/Handy/pull/1202",
-      "description": "Updates the Italian (it) translation.",
+      "description": "Updates the Italian translation.",
       "labels": []
     },
     {
       "number": 1200,
       "title": "add cohere",
-      "type": "other",
+      "type": "feat",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-04-01T12:36:35Z",
       "url": "https://github.com/cjpais/Handy/pull/1200",
-      "description": "Adds Cohere as a post-processing provider option.",
+      "description": "Adds Cohere as a cloud provider for AI post-processing of transcripts.",
       "labels": []
     },
     {
@@ -290,46 +303,46 @@
       },
       "mergedAt": "2026-03-30T23:39:10Z",
       "url": "https://github.com/cjpais/Handy/pull/1149",
-      "description": "Removes the custom onnxruntime Nix overlay now that nixpkgs ships onnxruntime 1.24.4, which satisfies ort-sys 2.0.0-rc.12.",
+      "description": "Switches the Nix build to nixpkgs' native onnxruntime package instead of a custom overlay.",
       "labels": []
     },
     {
       "number": 1167,
       "title": "Preserve legacy portable installs during updates",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "ferologics",
         "name": "Fero"
       },
       "mergedAt": "2026-03-30T22:53:57Z",
       "url": "https://github.com/cjpais/Handy/pull/1167",
-      "description": "Preserves portable mode during updater-driven installs when the target still uses Handy's legacy empty 'portable' marker, scoped to /UPDATE runs.",
+      "description": "Preserves portable-mode installs that use the old empty marker file when the updater runs, so legacy portable setups aren't lost on update.",
       "labels": []
     },
     {
       "number": 1188,
       "title": "upgrade transcribe rs to 0.3.5",
-      "type": "other",
+      "type": "chore",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-29T08:59:49Z",
       "url": "https://github.com/cjpais/Handy/pull/1188",
-      "description": "Upgrades transcribe-rs to 0.3.5, adding 250ms of start padding for Parakeet that improves int8-quantized transcription accuracy. Helps #1165.",
+      "description": "Upgrades the transcribe-rs engine to 0.3.5, which adds 250ms of start padding that improves Parakeet int8 transcription accuracy.",
       "labels": []
     },
     {
       "number": 1177,
       "title": "Load the VAD in parallel to ASR model",
-      "type": "other",
+      "type": "perf",
       "author": {
         "login": "jacksongoode",
         "name": "Jackson"
       },
       "mergedAt": "2026-03-29T05:15:45Z",
       "url": "https://github.com/cjpais/Handy/pull/1177",
-      "description": "Loads the voice-activity-detection (VAD) model in parallel with the ASR model to speed up startup.",
+      "description": "Loads the voice-activity-detection model in parallel with the speech model to speed up startup.",
       "labels": []
     },
     {
@@ -338,11 +351,11 @@
       "type": "fix",
       "author": {
         "login": "tomerar",
-        "name": ""
+        "name": "tomerar"
       },
       "mergedAt": "2026-03-29T05:04:16Z",
       "url": "https://github.com/cjpais/Handy/pull/1185",
-      "description": "Sets the tray icon tooltip on Windows (using the version label) so hovering no longer shows an empty bubble. Fixes #1184.",
+      "description": "Sets the Windows tray-icon hover tooltip, which was previously empty.",
       "labels": []
     },
     {
@@ -355,7 +368,7 @@
       },
       "mergedAt": "2026-03-28T11:06:14Z",
       "url": "https://github.com/cjpais/Handy/pull/1178",
-      "description": "Adds README steps for manually verifying release signatures with minisign, including decoding Handy's base64-encoded public key and .sig files. Addresses #407.",
+      "description": "Documents how to manually verify downloaded release signatures with minisign.",
       "labels": []
     },
     {
@@ -368,7 +381,7 @@
       },
       "mergedAt": "2026-03-28T11:05:37Z",
       "url": "https://github.com/cjpais/Handy/pull/1145",
-      "description": "Stops logging the full AppSettings struct so cloud provider API keys are no longer written to the logs.",
+      "description": "Stops cloud-provider API keys from being written into log files (a privacy fix).",
       "labels": []
     },
     {
@@ -381,33 +394,33 @@
       },
       "mergedAt": "2026-03-28T04:30:55Z",
       "url": "https://github.com/cjpais/Handy/pull/1175",
-      "description": "Adds a feature-freeze notice to CONTRIBUTING.md and fixes a typo.",
+      "description": "Adds a feature-freeze notice to the contributing guide and fixes a typo.",
       "labels": []
     },
     {
       "number": 1171,
       "title": "Use a more conservative OpenCC conversion for zh-Hant transcription",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "Roger-Wu",
         "name": "Guan-Rong Wu"
       },
       "mergedAt": "2026-03-28T02:50:40Z",
       "url": "https://github.com/cjpais/Handy/pull/1171",
-      "description": "Switches to a more conservative OpenCC conversion for Traditional Chinese (zh-Hant) transcription output to avoid over-converting characters.",
+      "description": "Uses a more conservative Traditional Chinese (zh-Hant) text conversion to avoid over-converting characters during transcription.",
       "labels": []
     },
     {
       "number": 1155,
       "title": "Add Hebrew language support",
-      "type": "other",
+      "type": "feat",
       "author": {
         "login": "tomerar",
-        "name": ""
+        "name": "tomerar"
       },
       "mergedAt": "2026-03-26T22:54:16Z",
       "url": "https://github.com/cjpais/Handy/pull/1155",
-      "description": "Adds full Hebrew localization, including the locale, app-language entry, and right-to-left (RTL) support.",
+      "description": "Adds full Hebrew language support, including right-to-left (RTL) layout.",
       "labels": []
     },
     {
@@ -420,20 +433,20 @@
       },
       "mergedAt": "2026-03-26T01:16:22Z",
       "url": "https://github.com/cjpais/Handy/pull/1123",
-      "description": "Rearranges settings UI: moves History above Post Processing and moves the cancel shortcut to General when push-to-talk is disabled.",
+      "description": "Rearranges the settings UI: moves History above Post-processing and relocates the cancel shortcut when push-to-talk is disabled.",
       "labels": []
     },
     {
       "number": 1142,
       "title": "enumerate and list gpus in the whisper dropdown, improve auto gpu",
-      "type": "other",
+      "type": "feat",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-26T01:00:59Z",
       "url": "https://github.com/cjpais/Handy/pull/1142",
-      "description": "Enumerates available GPUs and lists them in the Whisper dropdown, and improves automatic GPU selection.",
+      "description": "Lists the available GPUs in the Whisper model dropdown and improves automatic GPU selection.",
       "labels": []
     },
     {
@@ -446,13 +459,13 @@
       },
       "mergedAt": "2026-03-26T00:52:33Z",
       "url": "https://github.com/cjpais/Handy/pull/1126",
-      "description": "Requires a magic string inside the 'portable' marker file so Scoop installs (which leave an empty 'portable' file) no longer falsely trigger portable mode and lose data on update. Fixes #1124.",
+      "description": "Requires a magic string in the portable marker so Scoop installs no longer falsely trigger portable mode (which wiped data on every update).",
       "labels": []
     },
     {
       "number": 1136,
       "title": "Add Bulgarian language",
-      "type": "other",
+      "type": "feat",
       "author": {
         "login": "ron7",
         "name": "Ron"
@@ -465,7 +478,7 @@
     {
       "number": 1116,
       "title": "[BUGFIX] Fix model speed/accuracy indicator alignment",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "AlexanderYastrebov",
         "name": "Alexander Yastrebov"
@@ -485,46 +498,46 @@
       },
       "mergedAt": "2026-03-22T23:53:55Z",
       "url": "https://github.com/cjpais/Handy/pull/1115",
-      "description": "Adds a pre-flight check and a friendly 'No Microphone Found' toast (in all 17 locales) when no audio input device is available. Fixes #1114.",
+      "description": "Shows a clear 'No Microphone Found' message instead of failing silently when no audio input device is available, with translations for all locales.",
       "labels": []
     },
     {
       "number": 1113,
       "title": "Adding Swedish language translation",
-      "type": "other",
+      "type": "feat",
       "author": {
         "login": "mohammad-albarham",
         "name": "MOHAMMAD ALBARHAM"
       },
       "mergedAt": "2026-03-22T11:11:04Z",
       "url": "https://github.com/cjpais/Handy/pull/1113",
-      "description": "Adds Swedish language translation.",
+      "description": "Adds Swedish language support.",
       "labels": []
     },
     {
       "number": 1024,
       "title": "Save recordings before transcription",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "ferologics",
         "name": "Fero"
       },
       "mergedAt": "2026-03-22T07:43:02Z",
       "url": "https://github.com/cjpais/Handy/pull/1024",
-      "description": "Persists the WAV immediately after recording and tracks pending/completed/failed history states so recordings aren't lost when transcription fails, with retry from History.",
+      "description": "Saves each recording to disk before transcription so audio is never lost if transcription fails, and keeps failed/pending entries in History so they can be retried.",
       "labels": []
     },
     {
       "number": 1110,
       "title": "Remove outdated CHANGELOG.md",
-      "type": "other",
+      "type": "chore",
       "author": {
         "login": "isc",
         "name": "Ivan Schneider"
       },
       "mergedAt": "2026-03-22T00:15:47Z",
       "url": "https://github.com/cjpais/Handy/pull/1110",
-      "description": "Removes the outdated CHANGELOG.md (last updated at v0.3.0) since GitHub Releases are now the source of truth. Closes #1108.",
+      "description": "Removes the stale CHANGELOG.md (unmaintained since v0.3.0); GitHub Releases are now the source of truth for release notes.",
       "labels": []
     },
     {
@@ -537,33 +550,33 @@
       },
       "mergedAt": "2026-03-21T06:19:26Z",
       "url": "https://github.com/cjpais/Handy/pull/1095",
-      "description": "Adds SHA-256 verification of downloads and properly cancels in-flight requests so corrupt .partial files no longer trap users in an infinite re-download loop. Fixes #858.",
+      "description": "Adds SHA-256 verification so corrupt partial downloads no longer get stuck in an infinite resume loop that trapped users.",
       "labels": []
     },
     {
       "number": 1107,
       "title": "improve history performance",
-      "type": "other",
+      "type": "perf",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-21T04:06:29Z",
       "url": "https://github.com/cjpais/Handy/pull/1107",
-      "description": "Improves History view performance, mainly by paginating the scroll.",
+      "description": "Improves History performance by paginating the scroll.",
       "labels": []
     },
     {
       "number": 1100,
       "title": "Update Raycast integration description",
-      "type": "other",
+      "type": "docs",
       "author": {
         "login": "mattiacolombomc",
         "name": "Mattia Colombo"
       },
       "mergedAt": "2026-03-19T12:53:18Z",
       "url": "https://github.com/cjpais/Handy/pull/1100",
-      "description": "Updates the README's Raycast integration description to mention the new language-switch feature in extension v1.1.0.",
+      "description": "Updates the README's Raycast integration note to mention the new language-switch feature in the extension.",
       "labels": []
     },
     {
@@ -576,46 +589,46 @@
       },
       "mergedAt": "2026-03-19T12:04:17Z",
       "url": "https://github.com/cjpais/Handy/pull/1064",
-      "description": "Adds a new Integrations section to the README mentioning the Raycast extension for Handy.",
+      "description": "Adds an Integrations section to the README that mentions the Raycast extension for Handy.",
       "labels": []
     },
     {
       "number": 1094,
       "title": "fix(ci): use sign-binaries: true in main-build.yml",
-      "type": "fix",
+      "type": "ci",
       "author": {
         "login": "VirenMohindra",
         "name": "Viren Mohindra"
       },
       "mergedAt": "2026-03-19T07:16:34Z",
       "url": "https://github.com/cjpais/Handy/pull/1094",
-      "description": "Sets sign-binaries: true in main-build.yml so Tauri no longer fails on set-but-empty signing env vars, which had broken all 7 platform builds.",
+      "description": "Fixes failing main-branch builds by enabling binary signing in the main build workflow.",
       "labels": []
     },
     {
       "number": 1041,
       "title": "whisper-rs 0.16.0 and ort.rc12",
-      "type": "other",
+      "type": "chore",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-19T07:00:51Z",
       "url": "https://github.com/cjpais/Handy/pull/1041",
-      "description": "Upgrades whisper-rs to 0.16.0 and the ort runtime to rc.12.",
+      "description": "Upgrades whisper-rs to 0.16.0 and ONNX Runtime to rc12.",
       "labels": []
     },
     {
       "number": 1092,
       "title": "fix(ci): grant contents: write in main-build.yml",
-      "type": "fix",
+      "type": "ci",
       "author": {
         "login": "VirenMohindra",
         "name": "Viren Mohindra"
       },
       "mergedAt": "2026-03-19T06:43:38Z",
       "url": "https://github.com/cjpais/Handy/pull/1092",
-      "description": "Grants contents: write in main-build.yml to match the reusable build.yml's required permissions, fixing a workflow startup failure. Follow-up to #1091.",
+      "description": "Grants the main build workflow the write permission it needs to avoid a startup failure.",
       "labels": []
     },
     {
@@ -628,7 +641,7 @@
       },
       "mergedAt": "2026-03-19T06:39:09Z",
       "url": "https://github.com/cjpais/Handy/pull/1091",
-      "description": "Adds a workflow that runs full builds and quality checks on every push to main (not just on PRs) so main's buildability is verified automatically.",
+      "description": "Adds CI that runs the full build and quality checks on every push to main, so any main commit is downloadable and testable.",
       "labels": []
     },
     {
@@ -641,7 +654,7 @@
       },
       "mergedAt": "2026-03-19T06:12:43Z",
       "url": "https://github.com/cjpais/Handy/pull/747",
-      "description": "Adds an opt-in experimental 'lazy_stream_close' setting that keeps the mic stream open for 30s after recording, reducing latency for back-to-back transcriptions on Bluetooth mics.",
+      "description": "Adds an experimental option that keeps the microphone open for 30 seconds after recording to cut latency for back-to-back dictation, which especially helps Bluetooth mics.",
       "labels": []
     },
     {
@@ -654,7 +667,7 @@
       },
       "mergedAt": "2026-03-19T05:45:09Z",
       "url": "https://github.com/cjpais/Handy/pull/1085",
-      "description": "Prevents the idle watcher from unloading the model mid-recording when model_unload_timeout is set to Immediately, which had been killing transcription of clips longer than ~10s.",
+      "description": "Stops the idle timer from unloading the transcription model in the middle of a recording.",
       "labels": []
     },
     {
@@ -667,13 +680,13 @@
       },
       "mergedAt": "2026-03-19T00:53:03Z",
       "url": "https://github.com/cjpais/Handy/pull/1084",
-      "description": "Opens the mic at the device's native sample rate and always downsamples, improving audio quality on devices (e.g. Bluetooth) where 16kHz is supported but not native.",
+      "description": "Opens the microphone at its native sample rate and always downsamples to 16kHz, improving compatibility across devices.",
       "labels": []
     },
     {
       "number": 1088,
       "title": "upgrade path from old giga-am to new",
-      "type": "other",
+      "type": "chore",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
@@ -686,14 +699,14 @@
     {
       "number": 1089,
       "title": "add extra recording buffer",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-18T13:00:25Z",
       "url": "https://github.com/cjpais/Handy/pull/1089",
-      "description": "Adds an extra recording buffer to avoid clipping audio at the edges of a recording.",
+      "description": "Adds an extra recording buffer so the start and end of speech aren't clipped.",
       "labels": []
     },
     {
@@ -706,7 +719,7 @@
       },
       "mergedAt": "2026-03-18T11:39:09Z",
       "url": "https://github.com/cjpais/Handy/pull/1090",
-      "description": "Updates the Italian translation, renaming 'unload' to 'release' to avoid clashing with the word for 'download'.",
+      "description": "Updates the Italian translation, renaming 'unload' to 'release' to avoid confusion with 'download'.",
       "labels": []
     },
     {
@@ -719,7 +732,7 @@
       },
       "mergedAt": "2026-03-18T09:25:57Z",
       "url": "https://github.com/cjpais/Handy/pull/1073",
-      "description": "Adds concurrency groups, path filters, and Nix caching so PR checks drop from ~30 minutes to ~1 minute and duplicate runs no longer pile up.",
+      "description": "Cuts PR check time from about 30 minutes to about 1 minute by trimming redundant workflow runs.",
       "labels": []
     },
     {
@@ -732,7 +745,7 @@
       },
       "mergedAt": "2026-03-17T04:51:15Z",
       "url": "https://github.com/cjpais/Handy/pull/1051",
-      "description": "Adds configurable automatic model unloading after an idle timeout, cutting idle memory use from ~1.1GB to ~80MB.",
+      "description": "Automatically unloads the transcription model after an idle timeout, dropping idle memory from about 1.1GB to about 80MB.",
       "labels": []
     },
     {
@@ -745,46 +758,46 @@
       },
       "mergedAt": "2026-03-16T12:47:33Z",
       "url": "https://github.com/cjpais/Handy/pull/1025",
-      "description": "Adds NixOS out-of-the-box support: sets ALSA_PLUGIN_DIR in the package wrapper (fixing zero-sample audio under PipeWire) and adds a nixosModule for system-level config.",
+      "description": "Makes Handy work out-of-the-box on NixOS by fixing silent audio under PipeWire and adding a NixOS module.",
       "labels": []
     },
     {
       "number": 1058,
       "title": "experimental: pick between cpu/gpu acceleration + enable directml on windows",
-      "type": "other",
+      "type": "feat",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-16T12:41:30Z",
       "url": "https://github.com/cjpais/Handy/pull/1058",
-      "description": "Adds an experimental option to choose between CPU and GPU acceleration and enables DirectML on Windows.",
+      "description": "Adds an experimental setting to choose between CPU and GPU acceleration and enables DirectML acceleration on Windows.",
       "labels": []
     },
     {
       "number": 1023,
       "title": "Migrate to transcribe-rs-0.3.1 and add Canary support",
-      "type": "other",
+      "type": "feat",
       "author": {
         "login": "intech",
         "name": "Ivan Zhuravlev"
       },
       "mergedAt": "2026-03-16T08:31:45Z",
       "url": "https://github.com/cjpais/Handy/pull/1023",
-      "description": "Migrates to the transcribe-rs 0.3.x API and adds support for the NVIDIA Canary 1B v2 model. Closes #1022.",
+      "description": "Migrates to the transcribe-rs 0.3.x API and adds support for NVIDIA's Canary 1B v2 transcription model.",
       "labels": []
     },
     {
       "number": 1043,
       "title": "ensure samples don't get dropped",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-16T00:47:00Z",
       "url": "https://github.com/cjpais/Handy/pull/1043",
-      "description": "Ensures audio samples aren't dropped during recording. Relates to #963.",
+      "description": "Fixes audio samples being dropped during recording.",
       "labels": []
     },
     {
@@ -797,13 +810,13 @@
       },
       "mergedAt": "2026-03-15T14:44:48Z",
       "url": "https://github.com/cjpais/Handy/pull/1032",
-      "description": "Restricts the Windows microphone-permission guidance so it only appears on Windows.",
+      "description": "Ensures Windows-specific microphone guidance only appears on Windows.",
       "labels": []
     },
     {
       "number": 1046,
       "title": "Add Windows installation with winget to README",
-      "type": "other",
+      "type": "docs",
       "author": {
         "login": "pl4nty",
         "name": "Tom Plant"
@@ -823,85 +836,85 @@
       },
       "mergedAt": "2026-03-14T06:28:29Z",
       "url": "https://github.com/cjpais/Handy/pull/944",
-      "description": "Reduces the VolumeSlider step size from 10% to 1% for finer control.",
+      "description": "Makes the volume slider adjustable in 1% steps instead of 10% for finer control.",
       "labels": []
     },
     {
       "number": 1039,
       "title": "upgrade to handy-keys 0.2.3",
-      "type": "other",
+      "type": "chore",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-14T04:39:15Z",
       "url": "https://github.com/cjpais/Handy/pull/1039",
-      "description": "Upgrades the handy-keys dependency to 0.2.3.",
+      "description": "Upgrades the handy-keys input dependency to 0.2.3.",
       "labels": []
     },
     {
       "number": 1002,
       "title": "be able to change models from the tray",
-      "type": "other",
+      "type": "feat",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-14T04:19:07Z",
       "url": "https://github.com/cjpais/Handy/pull/1002",
-      "description": "Adds the ability to switch transcription models directly from the tray menu.",
+      "description": "Lets you switch transcription models directly from the tray menu.",
       "labels": []
     },
     {
       "number": 1037,
       "title": "attempt to clean up warnings on build",
-      "type": "other",
+      "type": "chore",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-14T03:42:42Z",
       "url": "https://github.com/cjpais/Handy/pull/1037",
-      "description": "Cleans up compiler warnings emitted during the build.",
+      "description": "Cleans up compiler warnings during the build.",
       "labels": []
     },
     {
       "number": 1035,
       "title": "Using the whisper `initial_prompt` field for custom words",
-      "type": "other",
+      "type": "feat",
       "author": {
         "login": "jmcampanini",
         "name": "Javier Campanini"
       },
       "mergedAt": "2026-03-14T01:37:46Z",
       "url": "https://github.com/cjpais/Handy/pull/1035",
-      "description": "Passes the user's custom words as Whisper's initial_prompt to bias the model's vocabulary during decoding; non-Whisper engines keep the existing post-correction.",
+      "description": "Feeds the user's custom-words list into Whisper's initial-prompt so the model prefers those spellings during transcription.",
       "labels": []
     },
     {
       "number": 991,
       "title": "Add Windows microphone permission onboarding",
-      "type": "other",
+      "type": "feat",
       "author": {
         "login": "ferologics",
         "name": "Fero"
       },
       "mergedAt": "2026-03-13T14:06:46Z",
       "url": "https://github.com/cjpais/Handy/pull/991",
-      "description": "Adds a Windows microphone-permission onboarding flow that detects blocked access, routes users to the permissions screen, and opens Windows privacy settings.",
+      "description": "Adds a Windows onboarding flow that detects blocked microphone access and routes users to the permission settings.",
       "labels": []
     },
     {
       "number": 1030,
       "title": "unwind instead of crash",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-13T13:04:51Z",
       "url": "https://github.com/cjpais/Handy/pull/1030",
-      "description": "Unwinds on panic instead of aborting, so the app degrades gracefully rather than crashing.",
+      "description": "Makes the app unwind cleanly instead of hard-crashing on certain panics.",
       "labels": []
     },
     {
@@ -914,7 +927,7 @@
       },
       "mergedAt": "2026-03-13T12:37:09Z",
       "url": "https://github.com/cjpais/Handy/pull/1029",
-      "description": "Makes the handy-keys keyboard backend the default on Windows.",
+      "description": "Makes the handy-keys input backend the default on Windows.",
       "labels": []
     },
     {
@@ -927,7 +940,7 @@
       },
       "mergedAt": "2026-03-13T10:45:46Z",
       "url": "https://github.com/cjpais/Handy/pull/1021",
-      "description": "Replaces manual Nix dependency-hash management with bun2nix.",
+      "description": "Replaces manual dependency-hash management in the Nix build with bun2nix for reproducible builds.",
       "labels": []
     },
     {
@@ -940,7 +953,7 @@
       },
       "mergedAt": "2026-03-12T12:33:02Z",
       "url": "https://github.com/cjpais/Handy/pull/1011",
-      "description": "Adds a README note about Homebrew cask maintenance and updates the install steps.",
+      "description": "Adds a README note about Homebrew cask installation and maintenance.",
       "labels": []
     },
     {
@@ -953,7 +966,7 @@
       },
       "mergedAt": "2026-03-12T10:39:39Z",
       "url": "https://github.com/cjpais/Handy/pull/948",
-      "description": "Fixes the Nix dependency hash and adds a CI job and script to keep dependency versions updated. Fixes #934.",
+      "description": "Fixes the Nix dependency hashes and adds a CI job and script to keep them updated.",
       "labels": []
     },
     {
@@ -966,26 +979,26 @@
       },
       "mergedAt": "2026-03-11T22:51:43Z",
       "url": "https://github.com/cjpais/Handy/pull/969",
-      "description": "Fixes the recording overlay not appearing on non-primary monitors by using monitor.position()/size() instead of work_area() when computing overlay position.",
+      "description": "Fixes the recording overlay not showing on non-primary (secondary) monitors.",
       "labels": []
     },
     {
       "number": 997,
       "title": "Add model loading failure notifications with i18n support",
-      "type": "other",
+      "type": "feat",
       "author": {
         "login": "cjpais",
         "name": "CJ Pais"
       },
       "mergedAt": "2026-03-11T06:43:16Z",
       "url": "https://github.com/cjpais/Handy/pull/997",
-      "description": "Adds localized user notifications when a model fails to load, listening for the loading_failed model-state event. Fixes #713.",
+      "description": "Adds translated notifications when a transcription model fails to load.",
       "labels": []
     },
     {
       "number": 983,
       "title": "ui: improve scrollbar UI with custom colors and rounded thumb",
-      "type": "other",
+      "type": "style",
       "author": {
         "login": "arshit09",
         "name": "Arshit Vaghasiya"
@@ -1011,27 +1024,27 @@
     {
       "number": 945,
       "title": "Handle microphone init failure without aborting",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "ferologics",
         "name": "Fero"
       },
       "mergedAt": "2026-03-10T05:07:21Z",
       "url": "https://github.com/cjpais/Handy/pull/945",
-      "description": "Replaces panic paths in AudioRecorder::open with proper error propagation via a startup handshake channel, so a microphone-init failure no longer hard-crashes the app.",
+      "description": "Prevents a hard crash when microphone initialization fails (for example when Windows privacy blocks mic access), propagating an error instead.",
       "labels": []
     },
     {
       "number": 965,
       "title": "fix(ci): simplify Bun setup for Windows ARM64",
-      "type": "fix",
+      "type": "ci",
       "author": {
         "login": "oddrationale",
         "name": "Dariel Dato-on"
       },
       "mergedAt": "2026-03-06T13:44:19Z",
       "url": "https://github.com/cjpais/Handy/pull/965",
-      "description": "Simplifies the Bun setup in CI for Windows ARM64.",
+      "description": "Simplifies the Bun setup for Windows ARM64 builds in CI.",
       "labels": []
     },
     {
@@ -1044,20 +1057,20 @@
       },
       "mergedAt": "2026-03-06T12:24:29Z",
       "url": "https://github.com/cjpais/Handy/pull/971",
-      "description": "Makes filler-word removal language-aware so words like 'um'/'ha' are only stripped where they're truly fillers, and adds a custom_filler_words override. Addresses #943.",
+      "description": "Removes filler words like 'um' and 'eh' based on the UI language (preserving real words in languages where they aren't fillers), with a custom-override setting.",
       "labels": []
     },
     {
       "number": 973,
       "title": "Fix Italian translation",
-      "type": "other",
+      "type": "fix",
       "author": {
         "login": "gdonisi",
         "name": "Giovanni Donisi"
       },
       "mergedAt": "2026-03-06T12:10:41Z",
       "url": "https://github.com/cjpais/Handy/pull/973",
-      "description": "Fixes the Italian translation of the recordingRetention settings to reflect auto-deletion of old recordings, plus minor style and consistency fixes.",
+      "description": "Fixes the Italian translation for the recording-retention settings and tidies styling and consistency.",
       "labels": []
     },
     {
@@ -1070,7 +1083,7 @@
       },
       "mergedAt": "2026-03-06T04:07:11Z",
       "url": "https://github.com/cjpais/Handy/pull/807",
-      "description": "Adds a portable-mode option to the Windows NSIS installer.",
+      "description": "Adds a portable-mode option to the Windows installer that keeps all of Handy's data in a single folder.",
       "labels": []
     },
     {
@@ -1079,11 +1092,11 @@
       "type": "other",
       "author": {
         "login": "albanobattistella",
-        "name": ""
+        "name": "albanobattistella"
       },
       "mergedAt": "2026-03-05T01:49:21Z",
       "url": "https://github.com/cjpais/Handy/pull/961",
-      "description": "Updates translation.json with translation string changes.",
+      "description": "Updates translation strings.",
       "labels": []
     },
     {
@@ -1096,111 +1109,7 @@
       },
       "mergedAt": "2026-03-04T12:14:23Z",
       "url": "https://github.com/cjpais/Handy/pull/951",
-      "description": "Adds Linux from-source install steps (deb extraction) and AppImage build troubleshooting for rolling-release distros to BUILD.md. Closes #946.",
-      "labels": []
-    },
-    {
-      "number": 926,
-      "title": "upgrade to handy keys 0.2.2",
-      "type": "other",
-      "author": {
-        "login": "cjpais",
-        "name": "CJ Pais"
-      },
-      "mergedAt": "2026-03-01T14:12:13Z",
-      "url": "https://github.com/cjpais/Handy/pull/926",
-      "description": "Upgrades handy-keys to 0.2.2. Aims to help #305 and #912.",
-      "labels": []
-    },
-    {
-      "number": 913,
-      "title": "feat: add GigaAM v3 for Russian speech recognition",
-      "type": "feat",
-      "author": {
-        "login": "pantafive",
-        "name": "Mike"
-      },
-      "mergedAt": "2026-03-01T13:53:48Z",
-      "url": "https://github.com/cjpais/Handy/pull/913",
-      "description": "Adds the GigaAM v3 e2e_ctc engine for Russian speech recognition with punctuation, Latin characters and digits, using an int8-quantized ONNX model.",
-      "labels": []
-    },
-    {
-      "number": 876,
-      "title": "fix: upgrade tauri-plugin-updater to v2.10.0 to fix duplicate registry entries (#873)",
-      "type": "fix",
-      "author": {
-        "login": "parkghost",
-        "name": "Brandon"
-      },
-      "mergedAt": "2026-03-01T13:41:55Z",
-      "url": "https://github.com/cjpais/Handy/pull/876",
-      "description": "Upgrades tauri-plugin-updater to v2.10.0 to fix duplicate Windows registry entries created by OTA updates. Fixes #873.",
-      "labels": []
-    },
-    {
-      "number": 901,
-      "title": "fix(i18n): tray menu shows Simplified Chinese when Traditional Chinese is selected",
-      "type": "fix",
-      "author": {
-        "login": "parkghost",
-        "name": "Brandon"
-      },
-      "mergedAt": "2026-03-01T03:39:14Z",
-      "url": "https://github.com/cjpais/Handy/pull/901",
-      "description": "Fixes locale truncation in the Rust tray menu so the tray shows Traditional Chinese (zh-TW) instead of Simplified Chinese when selected. Follow-up to #796.",
-      "labels": []
-    },
-    {
-      "number": 910,
-      "title": "Translated section \"keyboardImplementation\" translations for the languages i know and could help with (FR, PT, ES, TR)",
-      "type": "other",
-      "author": {
-        "login": "FotieMConstant",
-        "name": "fotiecodes"
-      },
-      "mergedAt": "2026-02-28T00:02:00Z",
-      "url": "https://github.com/cjpais/Handy/pull/910",
-      "description": "Adds keyboardImplementation section translations for French, Portuguese, Spanish and Turkish.",
-      "labels": []
-    },
-    {
-      "number": 903,
-      "title": "[macOS] Fix tray icon disabled + start hidden causing app to become permanently invisible ",
-      "type": "other",
-      "author": {
-        "login": "cjpais",
-        "name": "CJ Pais"
-      },
-      "mergedAt": "2026-02-27T02:55:04Z",
-      "url": "https://github.com/cjpais/Handy/pull/903",
-      "description": "Fixes a macOS state where disabling the tray icon plus 'Start Hidden' made the app permanently unreachable (no window, tray, or dock icon).",
-      "labels": []
-    },
-    {
-      "number": 854,
-      "title": "fix: auto-refresh model list when switching post-processing providers",
-      "type": "fix",
-      "author": {
-        "login": "that-lucas",
-        "name": ""
-      },
-      "mergedAt": "2026-02-25T08:21:26Z",
-      "url": "https://github.com/cjpais/Handy/pull/854",
-      "description": "Auto-fetches the valid model list when switching post-processing providers and clears stale cached/stored models, preventing failed requests from an invalid model selection.",
-      "labels": []
-    },
-    {
-      "number": 881,
-      "title": "use blocking for handy keys",
-      "type": "other",
-      "author": {
-        "login": "cjpais",
-        "name": "CJ Pais"
-      },
-      "mergedAt": "2026-02-23T03:18:47Z",
-      "url": "https://github.com/cjpais/Handy/pull/881",
-      "description": "Switches handy-keys to blocking mode. Fixes #875.",
+      "description": "Adds Linux install steps and AppImage troubleshooting (including a deb-bundle workaround for rolling-release distros) to the build docs.",
       "labels": []
     }
   ],
@@ -1208,32 +1117,29 @@
     {
       "login": "cjpais",
       "name": "CJ Pais",
-      "count": 22,
-      "additions": 2594,
-      "deletions": 809,
+      "count": 19,
+      "additions": 2544,
+      "deletions": 773,
       "prNumbers": [
-        1246,
-        1200,
-        1188,
-        1176,
-        1142,
-        1123,
-        1107,
-        1089,
-        1088,
-        1058,
-        1043,
-        1041,
-        1039,
-        1037,
-        1030,
-        1029,
-        1002,
-        997,
         971,
-        926,
-        903,
-        881
+        997,
+        1002,
+        1029,
+        1030,
+        1037,
+        1039,
+        1041,
+        1043,
+        1058,
+        1088,
+        1089,
+        1107,
+        1123,
+        1142,
+        1176,
+        1188,
+        1200,
+        1246
       ]
     },
     {
@@ -1243,18 +1149,18 @@
       "additions": 2655,
       "deletions": 557,
       "prNumbers": [
-        1393,
-        1392,
-        1335,
-        1316,
-        1272,
-        1269,
-        1266,
-        1256,
-        1255,
-        1149,
+        948,
         1021,
-        948
+        1149,
+        1255,
+        1256,
+        1266,
+        1269,
+        1272,
+        1316,
+        1335,
+        1392,
+        1393
       ]
     },
     {
@@ -1264,15 +1170,15 @@
       "additions": 891,
       "deletions": 207,
       "prNumbers": [
-        1095,
-        1094,
-        1092,
-        1091,
-        1085,
-        1084,
-        1073,
+        747,
         1051,
-        747
+        1073,
+        1084,
+        1085,
+        1091,
+        1092,
+        1094,
+        1095
       ]
     },
     {
@@ -1282,33 +1188,11 @@
       "additions": 1459,
       "deletions": 472,
       "prNumbers": [
-        1167,
-        1032,
-        1024,
+        945,
         991,
-        945
-      ]
-    },
-    {
-      "login": "albanobattistella",
-      "name": "",
-      "count": 2,
-      "additions": 4,
-      "deletions": 4,
-      "prNumbers": [
-        1202,
-        961
-      ]
-    },
-    {
-      "login": "AlexanderYastrebov",
-      "name": "Alexander Yastrebov",
-      "count": 2,
-      "additions": 53,
-      "deletions": 53,
-      "prNumbers": [
-        1116,
-        996
+        1024,
+        1032,
+        1167
       ]
     },
     {
@@ -1318,8 +1202,30 @@
       "additions": 1466,
       "deletions": 101,
       "prNumbers": [
-        1126,
-        807
+        807,
+        1126
+      ]
+    },
+    {
+      "login": "tomerar",
+      "name": "tomerar",
+      "count": 2,
+      "additions": 624,
+      "deletions": 7,
+      "prNumbers": [
+        1155,
+        1185
+      ]
+    },
+    {
+      "login": "AlexanderYastrebov",
+      "name": "Alexander Yastrebov",
+      "count": 2,
+      "additions": 53,
+      "deletions": 53,
+      "prNumbers": [
+        996,
+        1116
       ]
     },
     {
@@ -1329,8 +1235,8 @@
       "additions": 15,
       "deletions": 15,
       "prNumbers": [
-        1090,
-        973
+        973,
+        1090
       ]
     },
     {
@@ -1340,250 +1246,19 @@
       "additions": 9,
       "deletions": 1,
       "prNumbers": [
-        1100,
-        1064
+        1064,
+        1100
       ]
     },
     {
-      "login": "parkghost",
-      "name": "Brandon",
+      "login": "albanobattistella",
+      "name": "albanobattistella",
       "count": 2,
-      "additions": 1159,
-      "deletions": 963,
+      "additions": 4,
+      "deletions": 4,
       "prNumbers": [
-        901,
-        876
-      ]
-    },
-    {
-      "login": "tomerar",
-      "name": "",
-      "count": 2,
-      "additions": 624,
-      "deletions": 7,
-      "prNumbers": [
-        1185,
-        1155
-      ]
-    },
-    {
-      "login": "AICatKing",
-      "name": "Emma Watson",
-      "count": 1,
-      "additions": 35,
-      "deletions": 0,
-      "prNumbers": [
-        1178
-      ]
-    },
-    {
-      "login": "andrefrd",
-      "name": "André Dantas",
-      "count": 1,
-      "additions": 3,
-      "deletions": 3,
-      "prNumbers": [
-        1422
-      ]
-    },
-    {
-      "login": "arimxyer",
-      "name": "Ari",
-      "count": 1,
-      "additions": 61,
-      "deletions": 0,
-      "prNumbers": [
-        951
-      ]
-    },
-    {
-      "login": "arshit09",
-      "name": "Arshit Vaghasiya",
-      "count": 1,
-      "additions": 32,
-      "deletions": 0,
-      "prNumbers": [
-        983
-      ]
-    },
-    {
-      "login": "avishj",
-      "name": "Avish Jha",
-      "count": 1,
-      "additions": 2,
-      "deletions": 1,
-      "prNumbers": [
-        1011
-      ]
-    },
-    {
-      "login": "ChristophNoetel",
-      "name": "Christoph Noetel",
-      "count": 1,
-      "additions": 16,
-      "deletions": 16,
-      "prNumbers": [
-        1292
-      ]
-    },
-    {
-      "login": "collinstevens",
-      "name": "Collin Stevens",
-      "count": 1,
-      "additions": 7,
-      "deletions": 1,
-      "prNumbers": [
-        1175
-      ]
-    },
-    {
-      "login": "FotieMConstant",
-      "name": "fotiecodes",
-      "count": 1,
-      "additions": 39,
-      "deletions": 39,
-      "prNumbers": [
-        910
-      ]
-    },
-    {
-      "login": "intech",
-      "name": "Ivan Zhuravlev",
-      "count": 1,
-      "additions": 369,
-      "deletions": 94,
-      "prNumbers": [
-        1023
-      ]
-    },
-    {
-      "login": "isc",
-      "name": "Ivan Schneider",
-      "count": 1,
-      "additions": 0,
-      "deletions": 156,
-      "prNumbers": [
-        1110
-      ]
-    },
-    {
-      "login": "jacksongoode",
-      "name": "Jackson",
-      "count": 1,
-      "additions": 32,
-      "deletions": 19,
-      "prNumbers": [
-        1177
-      ]
-    },
-    {
-      "login": "jmcampanini",
-      "name": "Javier Campanini",
-      "count": 1,
-      "additions": 14,
-      "deletions": 2,
-      "prNumbers": [
-        1035
-      ]
-    },
-    {
-      "login": "jondeibel",
-      "name": "Jon Deibel",
-      "count": 1,
-      "additions": 47,
-      "deletions": 28,
-      "prNumbers": [
-        969
-      ]
-    },
-    {
-      "login": "jyuros",
-      "name": "Jaden Yuros",
-      "count": 1,
-      "additions": 10,
-      "deletions": 0,
-      "prNumbers": [
-        1288
-      ]
-    },
-    {
-      "login": "luoxi",
-      "name": "LuoXi",
-      "count": 1,
-      "additions": 58,
-      "deletions": 3,
-      "prNumbers": [
-        1221
-      ]
-    },
-    {
-      "login": "manato-tajiri",
-      "name": "田尻 愛斗",
-      "count": 1,
-      "additions": 8,
-      "deletions": 0,
-      "prNumbers": [
-        1426
-      ]
-    },
-    {
-      "login": "MarceloPrado",
-      "name": "Marcelo Terreiro Prado",
-      "count": 1,
-      "additions": 83,
-      "deletions": 5,
-      "prNumbers": [
-        1115
-      ]
-    },
-    {
-      "login": "mohammad-albarham",
-      "name": "MOHAMMAD ALBARHAM",
-      "count": 1,
-      "additions": 597,
-      "deletions": 0,
-      "prNumbers": [
-        1113
-      ]
-    },
-    {
-      "login": "oddrationale",
-      "name": "Dariel Dato-on",
-      "count": 1,
-      "additions": 1,
-      "deletions": 10,
-      "prNumbers": [
-        965
-      ]
-    },
-    {
-      "login": "pantafive",
-      "name": "Mike",
-      "count": 1,
-      "additions": 154,
-      "deletions": 13,
-      "prNumbers": [
-        913
-      ]
-    },
-    {
-      "login": "pl4nty",
-      "name": "Tom Plant",
-      "count": 1,
-      "additions": 3,
-      "deletions": 2,
-      "prNumbers": [
-        1046
-      ]
-    },
-    {
-      "login": "Roger-Wu",
-      "name": "Guan-Rong Wu",
-      "count": 1,
-      "additions": 1,
-      "deletions": 1,
-      "prNumbers": [
-        1171
+        961,
+        1202
       ]
     },
     {
@@ -1597,13 +1272,43 @@
       ]
     },
     {
-      "login": "rsanheim",
-      "name": "Rob Sanheim",
+      "login": "mohammad-albarham",
+      "name": "MOHAMMAD ALBARHAM",
       "count": 1,
-      "additions": 5,
+      "additions": 597,
       "deletions": 0,
       "prNumbers": [
-        1330
+        1113
+      ]
+    },
+    {
+      "login": "intech",
+      "name": "Ivan Zhuravlev",
+      "count": 1,
+      "additions": 369,
+      "deletions": 94,
+      "prNumbers": [
+        1023
+      ]
+    },
+    {
+      "login": "zitongcharliedeng",
+      "name": "COGnITO (mode: carbon)",
+      "count": 1,
+      "additions": 105,
+      "deletions": 0,
+      "prNumbers": [
+        1025
+      ]
+    },
+    {
+      "login": "MarceloPrado",
+      "name": "Marcelo Terreiro Prado",
+      "count": 1,
+      "additions": 83,
+      "deletions": 5,
+      "prNumbers": [
+        1115
       ]
     },
     {
@@ -1617,33 +1322,113 @@
       ]
     },
     {
-      "login": "sscotth",
-      "name": "Scott Humphries",
+      "login": "arimxyer",
+      "name": "Ari",
       "count": 1,
-      "additions": 0,
-      "deletions": 1,
+      "additions": 61,
+      "deletions": 0,
       "prNumbers": [
-        944
+        951
       ]
     },
     {
-      "login": "that-lucas",
-      "name": "",
+      "login": "luoxi",
+      "name": "LuoXi",
       "count": 1,
-      "additions": 77,
-      "deletions": 4,
+      "additions": 58,
+      "deletions": 3,
       "prNumbers": [
-        854
+        1221
       ]
     },
     {
-      "login": "vpsone",
-      "name": "",
+      "login": "jondeibel",
+      "name": "Jon Deibel",
       "count": 1,
-      "additions": 4,
-      "deletions": 12,
+      "additions": 47,
+      "deletions": 28,
       "prNumbers": [
-        1121
+        969
+      ]
+    },
+    {
+      "login": "AICatKing",
+      "name": "Emma Watson",
+      "count": 1,
+      "additions": 35,
+      "deletions": 0,
+      "prNumbers": [
+        1178
+      ]
+    },
+    {
+      "login": "arshit09",
+      "name": "Arshit Vaghasiya",
+      "count": 1,
+      "additions": 32,
+      "deletions": 0,
+      "prNumbers": [
+        983
+      ]
+    },
+    {
+      "login": "jacksongoode",
+      "name": "Jackson",
+      "count": 1,
+      "additions": 32,
+      "deletions": 19,
+      "prNumbers": [
+        1177
+      ]
+    },
+    {
+      "login": "ChristophNoetel",
+      "name": "Christoph Noetel",
+      "count": 1,
+      "additions": 16,
+      "deletions": 16,
+      "prNumbers": [
+        1292
+      ]
+    },
+    {
+      "login": "teremo4ek",
+      "name": "ybely",
+      "count": 1,
+      "additions": 15,
+      "deletions": 0,
+      "prNumbers": [
+        1471
+      ]
+    },
+    {
+      "login": "jmcampanini",
+      "name": "Javier Campanini",
+      "count": 1,
+      "additions": 14,
+      "deletions": 2,
+      "prNumbers": [
+        1035
+      ]
+    },
+    {
+      "login": "jyuros",
+      "name": "Jaden Yuros",
+      "count": 1,
+      "additions": 10,
+      "deletions": 0,
+      "prNumbers": [
+        1288
+      ]
+    },
+    {
+      "login": "manato-tajiri",
+      "name": "田尻 愛斗",
+      "count": 1,
+      "additions": 8,
+      "deletions": 0,
+      "prNumbers": [
+        1426
       ]
     },
     {
@@ -1657,13 +1442,103 @@
       ]
     },
     {
-      "login": "zitongcharliedeng",
-      "name": "COGnITO (mode: carbon)",
+      "login": "collinstevens",
+      "name": "Collin Stevens",
       "count": 1,
-      "additions": 105,
+      "additions": 7,
+      "deletions": 1,
+      "prNumbers": [
+        1175
+      ]
+    },
+    {
+      "login": "rsanheim",
+      "name": "Rob Sanheim",
+      "count": 1,
+      "additions": 5,
       "deletions": 0,
       "prNumbers": [
-        1025
+        1330
+      ]
+    },
+    {
+      "login": "vpsone",
+      "name": "vpsone",
+      "count": 1,
+      "additions": 4,
+      "deletions": 12,
+      "prNumbers": [
+        1121
+      ]
+    },
+    {
+      "login": "andrefrd",
+      "name": "André Dantas",
+      "count": 1,
+      "additions": 3,
+      "deletions": 3,
+      "prNumbers": [
+        1422
+      ]
+    },
+    {
+      "login": "pl4nty",
+      "name": "Tom Plant",
+      "count": 1,
+      "additions": 3,
+      "deletions": 2,
+      "prNumbers": [
+        1046
+      ]
+    },
+    {
+      "login": "avishj",
+      "name": "Avish Jha",
+      "count": 1,
+      "additions": 2,
+      "deletions": 1,
+      "prNumbers": [
+        1011
+      ]
+    },
+    {
+      "login": "Roger-Wu",
+      "name": "Guan-Rong Wu",
+      "count": 1,
+      "additions": 1,
+      "deletions": 1,
+      "prNumbers": [
+        1171
+      ]
+    },
+    {
+      "login": "oddrationale",
+      "name": "Dariel Dato-on",
+      "count": 1,
+      "additions": 1,
+      "deletions": 10,
+      "prNumbers": [
+        965
+      ]
+    },
+    {
+      "login": "isc",
+      "name": "Ivan Schneider",
+      "count": 1,
+      "additions": 0,
+      "deletions": 156,
+      "prNumbers": [
+        1110
+      ]
+    },
+    {
+      "login": "sscotth",
+      "name": "Scott Humphries",
+      "count": 1,
+      "additions": 0,
+      "deletions": 1,
+      "prNumbers": [
+        944
       ]
     }
   ]
