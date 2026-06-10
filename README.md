@@ -24,10 +24,14 @@ The design is deliberately simple: **the `/h:` commands are data generators, the
 ├── portal/                  # Vite + React + TS + Tailwind v4 app
 │   ├── src/                 # pages, components, typed data loaders
 │   └── public/data/         # the data contract (JSON + docs markdown)
-└── prompts/                 # how this was built, in order
-    ├── 01-initial-prompt.md     # the original request
-    ├── 02-generated-prompts.md  # all prompts (portal build + the 5 commands)
-    └── 03-plan.md               # the implementation plan
+└── prompts/                 # workshop prompts: rebuild the portal from a blank repo
+    ├── README.md                # how to run them, in order
+    ├── 00-init.md               # (optional) static portal hub scaffold
+    ├── 01-release-notes.md  02-prioritization.md  03-competition.md
+    └── original/                # the prompts that built THIS repo, for reference
+        ├── 01-initial-prompt.md     # the original request
+        ├── 02-generated-prompts.md  # all prompts (portal build + the 5 commands)
+        └── 03-plan.md               # the implementation plan
 ```
 
 `Handy/` (a clone of `cjpais/Handy`) is intentionally **not** committed. Clone it yourself next to this project so the commands can read its source (see below).
@@ -78,4 +82,4 @@ Then reload the browser. No rebuild needed.
 
 Each command (in `.claude/commands/h/`) uses `gh` and/or web search to gather data, then writes JSON or Markdown into `portal/public/data/` and stamps `meta.json` with a fresh timestamp. The portal reads those files at runtime via typed loaders in [`portal/src/lib/data.ts`](portal/src/lib/data.ts), falling back to a friendly empty state when a file is missing.
 
-The full prompts are documented in [prompts/02-generated-prompts.md](prompts/02-generated-prompts.md), alongside the [original request](prompts/01-initial-prompt.md) and the [implementation plan](prompts/03-plan.md).
+The full prompts are documented in [prompts/original/02-generated-prompts.md](prompts/original/02-generated-prompts.md), alongside the [original request](prompts/original/01-initial-prompt.md) and the [implementation plan](prompts/original/03-plan.md). For the workshop versions — three simple prompts that rebuild the portal as static HTML pages from a blank repo, no Handy clone needed — see [prompts/README.md](prompts/README.md).

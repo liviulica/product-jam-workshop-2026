@@ -1,14 +1,7 @@
-# 01 · Initial Prompt
-
-The original request that kicked off the project. Given verbatim to Claude Code in a
-session started in `product-jam/`, it asked Claude to explore the repo and propose the
-prompt/architecture. Its outputs are captured in [02-generated-prompts.md](02-generated-prompts.md)
-and [03-plan.md](03-plan.md).
-
 ```text
-We will be working on Handy. I want you to build for it a portal, which runs on local, in this folder.
+We will be working on Handy (https://github.com/cjpais/Handy). I want you to build for it a portal, which runs on local, in this folder.
 The purpose of the portal is:
-1. Release notes - by default it shows the last week. Looks at the PRs and make a human readable summary, a list of PRs with the ids, links to them, date, author, description. At the end there is a leader board of the builders.
+1. Release notes - by default it shows the 30 days. Looks at the PRs and make a human readable summary, a list of PRs with the ids, links to them, date, author, description. At the end there is a leader board of the builders.
 2. Documentation based on the code. We will analyse the code and we will create a documentation portal, accessible from the tool.
 3. Prioritisation of open issue based on a few cattegories: comments, severity and perceived priority.
 4. News about the competition.
