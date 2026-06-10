@@ -6,9 +6,21 @@ import {
   type Prioritization as P,
   type Meta,
 } from "../lib/data";
+import { VIEW_STORAGE_KEY } from "../lib/board";
 import { formatDate } from "../lib/format";
 import EmptyState from "../components/EmptyState";
+import PriorityBoard from "../components/PriorityBoard";
 import UpdatedBadge from "../components/UpdatedBadge";
+
+type View = "list" | "board";
+
+function loadView(): View {
+  try {
+    return localStorage.getItem(VIEW_STORAGE_KEY) === "board" ? "board" : "list";
+  } catch {
+    return "list";
+  }
+}
 
 function ScoreBar({
   label,
@@ -43,6 +55,16 @@ export default function Prioritization() {
   const [meta, setMeta] = useState<Meta>(emptyMeta);
   const [labelFilter, setLabelFilter] = useState("");
   const [minScore, setMinScore] = useState(0);
+  const [view, setView] = useState<View>(loadView);
+
+  const switchView = (v: View) => {
+    setView(v);
+    try {
+      localStorage.setItem(VIEW_STORAGE_KEY, v);
+    } catch {
+      // localStorage unavailable — toggle still works for this session
+    }
+  };
 
   useEffect(() => {
     loadPrioritization().then(setData);
@@ -81,7 +103,27 @@ export default function Prioritization() {
         <EmptyState label="prioritized issues" command="/h:prioritize" />
       ) : (
         <>
-          <div className="mb-4 flex flex-wrap items-center gap-3 text-sm">
+          <div className="mb-4 inline-flex rounded-lg border border-zinc-300 p-0.5 text-sm dark:border-zinc-700">
+            {(["list", "board"] as const).map((v) => (
+              <button
+                key={v}
+                onClick={() => switchView(v)}
+                className={`rounded-md px-3 py-1 capitalize transition-colors ${
+                  view === v
+                    ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900"
+                    : "text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
+                }`}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+
+          {view === "board" ? (
+            <PriorityBoard issues={data.issues} />
+          ) : (
+            <>
+              <div className="mb-4 flex flex-wrap items-center gap-3 text-sm">
             <select
               value={labelFilter}
               onChange={(e) => setLabelFilter(e.target.value)}
@@ -199,6 +241,8 @@ export default function Prioritization() {
               </li>
             ))}
           </ol>
+            </>
+          )}
         </>
       )}
     </div>
