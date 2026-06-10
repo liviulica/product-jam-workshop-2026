@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-01T10:20:28Z",
-  "summary": "## Speech-to-text landscape, mid-2026\n\nThe dictation market in 2026 has split into four camps, and Handy sits in a corner almost no one else occupies.\n\n**Cloud-AI dictation** is where the money is. Wispr Flow is reportedly raising a ~$260M Series B at a ~$2B valuation (unverified) and is pushing hard into mobile (Android shipped in Feb 2026) and developer workflows (terminal/Claude Code support). Aqua Voice (YC W24) replaced its Whisper pipeline with a proprietary \"Avalon\" model and added iOS. Both are subscription-priced ($8–$15/mo) and send your audio to their servers. They win on out-of-box accuracy and AI text-editing, and lose on privacy, price, and offline use.\n\n**Local Mac-centric apps** — superwhisper and MacWhisper — are Handy's closest philosophical cousins: on-device Whisper/Parakeet transcription, no audio leaving the machine. But they are macOS-first (MacWhisper is Mac-only; superwhisper has no Linux), closed-source, and monetized (superwhisper ~$8.49/mo; MacWhisper a one-time ~€59). They out-polish Handy on Mac and on file/meeting transcription features.\n\n**Power-user voice control** — Talon Voice — is local and cross-platform (incl. Linux) but aimed at hands-free coding and accessibility, with a steep scripting learning curve and a closed core gated behind Patreon for the best speech model. Different audience from Handy's \"just dictate into any app.\"\n\n**Adjacent + built-in.** Otter.ai is a cloud meeting notetaker, not a system-wide dictation tool — adjacent rather than head-to-head. The free built-in options matter most as the default users compare against: Apple Dictation is genuinely on-device on modern Apple Silicon, while Windows Voice Typing (Win+H) is still cloud-backed (Azure Speech); Windows' on-device path (Voice Access / Copilot+ Fluid Dictation) is limited and English-first.\n\n**Where Handy is unique.** Across this entire set, Handy is the only option that is simultaneously open-source, fully local, cross-platform (macOS/Windows/**Linux**), free, and model-agnostic (swap Whisper/Parakeet, choose acceleration, point post-processing at any LLM incl. local Ollama or Apple Intelligence). No competitor checks more than three of those boxes. The market is consolidating around paid cloud convenience; Handy's opening is the users that consolidation leaves behind.",
+  "generatedAt": "2026-06-10T15:08:03Z",
+  "summary": "## The dictation market in mid-2026: free-and-local goes mainstream, and the money piles into the cloud\n\nThe speech-to-text space has split into two camps moving in opposite directions. On one side, **cloud dictation is consolidating and raising huge sums** — Wispr Flow is reportedly in talks at a ~$2B valuation, Aqua Voice and Willow are pushing upmarket with enterprise tiers, and Grammarly has folded voice into its paid plans. On the other, **free, on-device dictation just got a giant new player**: Google quietly shipped *Eloquent*, a free, offline-first AI dictation app for iPhone built on its own Gemma models. Apple and Microsoft keep improving their built-in, on-device dictation for free too.\n\nThat puts Handy in a sharpening position. Its wedge — **free, fully open-source, 100% local, and genuinely cross-platform (including Linux)** — is still unique among serious tools: no one else is all four at once. VoiceInk is the closest match (open-source + local) but is macOS/Apple-Silicon only and charges for the convenient binary. The paid cloud apps win on polish, hosted accuracy, and mobile, but require trust, a subscription, and an internet connection.\n\nThe strategic read: the paid field is racing toward AI rewriting and enterprise compliance, while \"free + local\" is becoming table stakes thanks to Google and the platform incumbents. Handy's durable moats are **openness, Linux, privacy, and price** — and the clearest risks are reliability gaps versus polished rivals and the lack of a mobile app.",
   "competitors": [
     {
       "name": "superwhisper",
@@ -30,6 +30,12 @@
         "Lifetime pricing appears unstable in 2026 (reports of a jump from ~$249 toward $849), creating buyer uncertainty"
       ],
       "recentNews": [
+        {
+          "date": "2026-06-09",
+          "headline": "superwhisper v2.16.0 adds experimental S1-Mini local model and theme controls",
+          "url": "https://superwhisper.com/changelog",
+          "summary": "Introduced experimental access to the S1-Mini local model, light/dark/system theme control, a new sound-effect style, enhanced vocabulary processing for very large lists, and a stat share card; also improved local language-model output quality and S1 region failover reliability."
+        },
         {
           "date": "2026-05-29",
           "headline": "superwhisper v2.15.0 released",
@@ -182,6 +188,12 @@
         "Subscription-only with no Linux support (unverified) and no lifetime option"
       ],
       "recentNews": [
+        {
+          "date": "2026-06-01",
+          "headline": "Aqua Voice ships an Enterprise Plan (SSO, team dashboard, shared dictionary)",
+          "url": "https://aquavoice.com/changelog",
+          "summary": "Added an Enterprise tier with SSO for unified sign-in, a team-summary statistics dashboard, and a shared team dictionary, pushing further upmarket; a few days later (v0.14.21, June 3) it added bulk-add of terms to the custom dictionary. Still cloud-only with no on-device mode."
+        },
         {
           "date": "2026-04-20",
           "headline": "Aqua Voice - the best dictation app I've ever used - is now on iPhone",
@@ -359,15 +371,292 @@
         }
       ],
       "vsHandy": "The key contrast is privacy and portability. Windows' Win+H voice typing is convenient and free but cloud-based (Azure), so dictated audio is sent to Microsoft's servers and it needs internet; true on-device speech requires the separate Voice Access tool or a Copilot+ PC for Fluid Dictation. Handy is fully local by default on any machine (no internet, no audio leaving the device), open-source, and cross-platform (Windows, macOS, Linux) with user-chosen Whisper/Parakeet models and optional local post-processing. Windows Voice Typing wins on zero setup and cloud accuracy on a plain Windows PC; Handy wins on guaranteed-local privacy without special hardware, transparency, model control, and working the same way across operating systems."
+    },
+    {
+      "name": "Eloquent",
+      "url": "https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/",
+      "positioning": "Google's free, offline-first AI dictation app for iPhone (launched April 2026). Uses on-device Gemma speech-recognition models to transcribe and clean up speech in real time — removing fillers and restructuring into polished text — with optional Gemini cloud refinement, summarization, and tone/length transforms.",
+      "pricing": "Free. No subscription, no usage cap, and no advertising.",
+      "platforms": [
+        "iOS"
+      ],
+      "openSource": false,
+      "local": true,
+      "strengths": [
+        "Free with no usage cap or ads, backed by Google's models and distribution",
+        "Offline-first, on-device transcription using Gemma models (privacy-friendly)",
+        "Real-time speech cleanup (filler removal, restructuring) plus summarize/tone/length transforms",
+        "No account friction; quietly polished for a v1"
+      ],
+      "weaknesses": [
+        "iPhone-only today — no Mac, Windows, Linux, or shipped Android version (Android referenced but not released, unverified)",
+        "Closed source",
+        "Optional cloud refinement sends text to Gemini",
+        "New and unproven; subject to Google's history of discontinuing apps"
+      ],
+      "recentNews": [
+        {
+          "date": "2026-04-07",
+          "headline": "Google quietly launches Eloquent, a free offline AI dictation app on iOS",
+          "url": "https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/",
+          "summary": "Appeared on the App Store with no announcement; offline Gemma-based transcription with optional Gemini cleanup, free with no cap or ads."
+        }
+      ],
+      "vsHandy": "The most direct threat to Handy's 'free + local' wedge: both are free and run transcription on-device. Eloquent has Google's model quality, real-time cleanup, and App Store reach, but it is iPhone-only, closed source, and nudges text to Gemini for refinement. Handy is open-source, fully local with no cloud step, and cross-platform including desktop and Linux — platforms Eloquent doesn't touch. Where they would overlap (iPhone), Handy has no product yet."
+    },
+    {
+      "name": "VoiceInk",
+      "url": "https://tryvoiceink.com/",
+      "positioning": "Open-source, on-device dictation for macOS by indie developer Prakash Joshi Pax. Runs Whisper locally (via the Apple Silicon Neural Engine) for 100% offline, system-wide dictation across apps, with 100+ languages, app-specific 'Power Mode' configs, and optional bring-your-own-key LLM enhancement.",
+      "pricing": "One-time lifetime license: Solo $25 (1 Mac), Personal $39 (2 Macs), Extended $49 (3 Macs), with a 14-day money-back guarantee. Free if you build from source (open-source under GPL v3 on GitHub).",
+      "platforms": [
+        "macOS (Apple Silicon)",
+        "iOS"
+      ],
+      "openSource": true,
+      "local": true,
+      "strengths": [
+        "Open-source and fully local, like Handy — auditable and private by default",
+        "Cheap one-time lifetime pricing (no subscription); free if self-built",
+        "Polished, Mac-native UX with system-wide dictation and app-specific Power Mode",
+        "Optional AI enhancement via user-supplied API keys; active development"
+      ],
+      "weaknesses": [
+        "macOS/Apple-Silicon only — no Windows, no Linux, no Intel Mac support",
+        "The convenient notarized binary is paid; free only if you build it yourself",
+        "Smaller ecosystem and resources than the funded cloud rivals"
+      ],
+      "recentNews": [
+        {
+          "date": "2026-03",
+          "headline": "VoiceInk v1.72 ships",
+          "url": "https://tryvoiceink.com/",
+          "summary": "Continued regular updates to the open-source Mac dictation app; local Whisper transcription on the Apple Silicon Neural Engine with optional BYOK enhancement."
+        }
+      ],
+      "vsHandy": "Handy's closest philosophical match — both are open-source and fully local. VoiceInk is more polished on the Mac and offers cheap lifetime licenses, but it is macOS/Apple-Silicon only and charges for the ready-to-run binary. Handy is free, MIT-licensed, and truly cross-platform (Windows and Linux too). They compete for the same privacy/OSS audience: Handy's edge is breadth and price, VoiceInk's is Mac polish."
+    },
+    {
+      "name": "Willow Voice",
+      "url": "https://willowvoice.com",
+      "positioning": "Professional cross-platform AI dictation for Mac, Windows, iOS, and Android (Windows added January 2026). Matches your writing style across apps, removes fillers, and offers an AI Mode that turns rough verbal notes into polished messages. An optional offline mode on Mac/iOS is reported but not stated on the pricing page (unverified).",
+      "pricing": "Free tier: 2,000 words/week. Individual: $12/month billed annually (or ~$15/month monthly), unlimited dictation. Team: $10/user/month annual (3-seat minimum). Enterprise: custom (SOC 2, HIPAA, zero data retention).",
+      "platforms": [
+        "macOS",
+        "Windows",
+        "iOS",
+        "Android"
+      ],
+      "openSource": false,
+      "local": false,
+      "strengths": [
+        "Broadest platform coverage among the dictation startups (Mac, Windows, iOS, Android)",
+        "Polished AI rewriting and cross-app style-matching",
+        "Enterprise compliance (SOC 2, HIPAA, zero data retention)",
+        "Free tier to try before paying"
+      ],
+      "weaknesses": [
+        "Cloud-first — audio leaves the device for transcription (privacy)",
+        "Subscription-based and not open source",
+        "Any offline mode is limited/unverified on the pricing page",
+        "Weekly word cap on the free tier"
+      ],
+      "recentNews": [
+        {
+          "date": "2026-01",
+          "headline": "Willow Voice adds a Windows app",
+          "url": "https://willowvoice.com/pricing",
+          "summary": "Expanded from Mac/mobile to Windows, making it one of the broadest cross-platform cloud dictation tools."
+        }
+      ],
+      "vsHandy": "Willow is a polished, cross-platform cloud service with strong AI rewriting and enterprise compliance, but it's subscription-based, closed source, and sends audio to the cloud. Handy is free, open-source, and fully local. Willow wins on hands-off accuracy, AI editing, and mobile reach; Handy wins on cost, privacy, transparency, and Linux."
+    },
+    {
+      "name": "Grammarly",
+      "url": "https://www.grammarly.com",
+      "positioning": "Adjacent: a cloud AI writing assistant (grammar, rewriting, tone) that added voice-to-text via Voice Composer on iOS and browser voice typing through a Speechify partnership. Dictation is a bundled feature, not the core product or a fast system-wide dictation tool.",
+      "pricing": "Free tier (no voice). Pro: $12/month billed annually (or $30/month monthly). Business: $15/seat/month annually. Voice features are included in Pro/Business/Enterprise (exact details unverified).",
+      "platforms": [
+        "Web/browser extension",
+        "Windows",
+        "macOS",
+        "iOS",
+        "Android"
+      ],
+      "openSource": false,
+      "local": false,
+      "strengths": [
+        "Massive existing install base and distribution",
+        "Best-in-class writing correction and rewriting",
+        "Voice now bundled into paid plans at no extra cost",
+        "Broad platform reach and enterprise footprint"
+      ],
+      "weaknesses": [
+        "Dictation is secondary/adjacent — not a low-latency, system-wide dictation tool",
+        "Cloud-only; text and voice are processed on Grammarly's servers (privacy)",
+        "Voice gated behind paid tiers; subscription-based",
+        "Not open source"
+      ],
+      "recentNews": [
+        {
+          "date": "2026-04",
+          "headline": "Grammarly bundles voice via Voice Composer and a Speechify partnership",
+          "url": "https://www.grammarly.com/blog/product/voice-composer/",
+          "summary": "Voice Composer adds voice-to-text on iOS and a Speechify partnership brings browser voice typing; voice ships inside paid tiers (timing unverified)."
+        }
+      ],
+      "vsHandy": "A different category: Grammarly is a cloud writing assistant where dictation is an add-on, not a dedicated fast dictation tool. Handy is purpose-built, free, local, and cross-platform for system-wide dictation. They barely overlap, except that Grammarly's voice features could satisfy casual users who'd otherwise reach for a dictation app. Handy wins decisively on dictation focus, privacy, price, and openness."
     }
   ],
   "opportunities": [
-    "Privacy / local-first: Wispr Flow, Aqua Voice, Otter.ai, and Windows Voice Typing all send audio to the cloud. Handy can own the 'your voice never leaves your device, no account required' position for privacy-conscious users, regulated industries, and offline/air-gapped use.",
-    "Forkability / open source: not one competitor in this set is open-source. Handy is uniquely auditable and hackable — a decisive edge with developers, security-conscious enterprises, and anyone who needs to self-host or customize the pipeline.",
-    "Price: rivals charge $8–$15/mo (superwhisper $8.49, Wispr $15, Aqua ~$8) or one-time fees (MacWhisper ~€59). Handy is free forever, which is a strong wedge against subscription fatigue.",
-    "Linux support: superwhisper has no Linux, MacWhisper is Mac-only, and the Apple/Windows built-ins are single-OS. Only Talon and Handy cover Linux — and Talon is voice-control, not simple dictation. Handy can become the default dictation tool for the Linux desktop.",
-    "Model choice & control: proprietary apps lock you into one engine. Handy lets users pick and swap Whisper and Parakeet models and acceleration backends, appealing to power users who want speed/accuracy/language trade-offs on their own terms.",
-    "Customizable post-processing: Handy's LLM post-processing supports many providers including local Ollama and on-device Apple Intelligence, so cleanup/formatting can stay fully local. Competitors' AI editing is cloud-bound — Handy can market 'AI text cleanup with zero data leaving your machine.'",
-    "Beat the built-ins where they're weak: position against Apple Dictation and Win+H on the things they lack — custom vocabulary, cross-app consistency, choice of models, LLM post-processing, and (vs Windows) true offline operation."
+    "Own the privacy-first, no-cloud niche as Wispr, Aqua, Willow, and Grammarly push everything to their servers.",
+    "Be the default Linux dictation tool — a segment the incumbents and nearly every startup ignore.",
+    "Lean into forkability and extensibility (plugins, scripting) for the developer/hacker audience that Talon and VoiceInk court.",
+    "Ship a first-party mobile app to counter Eloquent, Aqua, Wispr, and Willow on iPhone.",
+    "Bundle the newest open local models (Parakeet v3, Canary) so accuracy reaches parity without any cloud.",
+    "Position as the trustworthy choice for regulated/enterprise users who legally can't send audio to the cloud."
+  ],
+  "swot": {
+    "strengths": [
+      "Free and fully open-source (MIT) — auditable, forkable, and self-hostable; no other serious rival is both free and open.",
+      "100% local/offline transcription with Whisper and Parakeet — privacy by default, no account, nothing leaves the device.",
+      "Genuinely cross-platform, including Linux — most paid rivals skip Linux entirely.",
+      "Real model choice (Whisper, Parakeet, Canary) plus optional bring-your-own-key cloud post-processing.",
+      "Active contributor community with frequent releases (dozens of contributors over the last quarter)."
+    ],
+    "weaknesses": [
+      "Leaner, less polished feature set than mature paid apps like superwhisper and Wispr Flow.",
+      "No first-party mobile app — rivals ship iPhone (and some Android) apps; Handy is desktop-only.",
+      "No built-in hosted 'best accuracy' tier; relies on local models plus user-supplied cloud keys.",
+      "Open reliability gaps in the tracker (stuck transcription, dropped long recordings, multi-monitor overlay).",
+      "Setup and discoverability friction versus one-tap App Store installs; no marketing engine."
+    ],
+    "opportunities": [
+      "Own the privacy-first, no-cloud niche as Wispr, Aqua, Willow, and Grammarly push everything to their servers.",
+      "Be the default Linux dictation tool — a segment the incumbents and nearly every startup ignore.",
+      "Lean into forkability and extensibility (plugins, scripting) for the developer/hacker audience that Talon and VoiceInk court.",
+      "Ship a first-party mobile app to counter Eloquent, Aqua, Wispr, and Willow on iPhone.",
+      "Bundle the newest open local models (Parakeet v3, Canary) so accuracy reaches parity without any cloud.",
+      "Position as the trustworthy choice for regulated/enterprise users who legally can't send audio to the cloud."
+    ],
+    "threats": [
+      "Google Eloquent: free + offline + Gemma models + Google's distribution attacks Handy's exact 'free + local' wedge (iOS-only for now).",
+      "Well-funded closed rivals (Wispr Flow reportedly near a $2B valuation) outspending on polish, models, and marketing.",
+      "Platform incumbents (Apple, Microsoft) bundling steadily improving on-device dictation for free in the OS.",
+      "VoiceInk: another open-source, local app competing for the same privacy/OSS audience (macOS-focused).",
+      "Model commoditisation — as on-device ASR becomes trivial, 'local + free' turns into table stakes and erodes differentiation.",
+      "Bus-factor/maintainer risk for a volunteer OSS project versus funded full-time teams."
+    ]
+  },
+  "roadmap": [
+    {
+      "horizon": "Now",
+      "theme": "Reliability & trust",
+      "items": [
+        "Close the top tracker issues: dropped long recordings, stuck/forever transcription, and multi-monitor overlay placement.",
+        "Harden microphone init and device selection across Windows/Linux audio stacks (PipeWire, ALSA).",
+        "Keep the recent data-safety wins (save-before-transcribe, no-log-keys) and add regression coverage."
+      ],
+      "rationale": "Reliability is Handy's weakest axis versus polished paid rivals; trust is the foundation of the privacy-first pitch. Grounded in the open issue prioritization."
+    },
+    {
+      "horizon": "Next",
+      "theme": "Reach & accuracy parity",
+      "items": [
+        "Curate and ship the newest open local models (Parakeet v3, Canary) so out-of-box accuracy rivals cloud apps.",
+        "Smooth onboarding and discoverability (clear installs, model picker, first-run guidance).",
+        "Double down on Linux/Wayland support as the differentiator no competitor owns."
+      ],
+      "rationale": "Closes the accuracy gap that pushes users to paid cloud tools, while widening the Linux moat that Eloquent, Wispr, Aqua, and Willow ignore."
+    },
+    {
+      "horizon": "Later",
+      "theme": "Ecosystem & mobile",
+      "items": [
+        "Build a first-party mobile app (iPhone first) to contest Eloquent/Aqua/Wispr/Willow on the platform Handy can't serve today.",
+        "Offer a plugin/scripting/extensibility story for the developer audience that Talon and VoiceInk attract.",
+        "Explore an optional, privacy-preserving hosted model for users who want top accuracy without managing models."
+      ],
+      "rationale": "Mobile is the biggest coverage gap and the fastest-growing battleground; extensibility turns forkability into a real ecosystem advantage."
+    }
+  ],
+  "latestNews": [
+    {
+      "date": "2026-06-09",
+      "competitor": "superwhisper",
+      "headline": "superwhisper v2.16.0 adds an experimental local model and theme controls",
+      "url": "https://superwhisper.com/changelog",
+      "summary": "Introduced experimental access to the S1-Mini local model, light/dark/system themes, and better large-vocabulary handling, with improved local language-model output quality."
+    },
+    {
+      "date": "2026-06-01",
+      "competitor": "Aqua Voice",
+      "headline": "Aqua Voice ships an Enterprise plan (SSO, team dashboard, shared dictionary)",
+      "url": "https://aquavoice.com/changelog",
+      "summary": "Added an enterprise tier with SSO, team-summary stats, and a shared dictionary, pushing further upmarket; still cloud-only with no on-device mode."
+    },
+    {
+      "date": "2026-05-15",
+      "competitor": "superwhisper",
+      "headline": "superwhisper v2.14.0 adds GPT 5.5 BYOK and coding-agent plugins",
+      "url": "https://superwhisper.com/changelog",
+      "summary": "Added GPT 5.5 via bring-your-own-key, direct coding-agent plugin installs, and CSV vocabulary import."
+    },
+    {
+      "date": "2026-05-12",
+      "competitor": "Wispr Flow",
+      "headline": "Wispr in funding talks at a ~$2B valuation",
+      "url": "https://www.bloomberg.com/news/articles/2026-05-12/ai-dictation-startup-wispr-in-funding-talks-at-2-billion-value",
+      "summary": "Reported talks for a ~$260M round led by Menlo Ventures that would roughly triple the company's valuation to about $2B, signaling how much capital is flowing into cloud dictation."
+    },
+    {
+      "date": "2026-05-01",
+      "competitor": "Wispr Flow",
+      "headline": "Wispr Flow Desktop v1.5.113: Scratchpad, Transforms, and terminal coding-agent support",
+      "url": "https://wisprflow.ai",
+      "summary": "Added a Scratchpad, text Transforms, and Claude Code / Codex terminal integrations, plus local transcript storage controls."
+    },
+    {
+      "date": "2026-04-28",
+      "competitor": "Otter.ai",
+      "headline": "Otter.ai pivots toward a 'Conversational Knowledge Engine' with meeting agents",
+      "url": "https://otter.ai",
+      "summary": "Repositioned from AI notetaker toward enterprise meeting agents that mine conversations for institutional knowledge."
+    },
+    {
+      "date": "2026-04-20",
+      "competitor": "Aqua Voice",
+      "headline": "Aqua Voice launches on iPhone",
+      "url": "https://aquavoice.com",
+      "summary": "Extended its cloud Avalon dictation to iOS with reported iOS Pro pricing around $119/year."
+    },
+    {
+      "date": "2026-04-07",
+      "competitor": "Eloquent",
+      "headline": "Google quietly launches Eloquent, a free offline AI dictation app on iOS",
+      "url": "https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/",
+      "summary": "Google shipped a free, offline-first iPhone dictation app built on on-device Gemma models that cleans up speech in real time, with optional Gemini cloud refinement — no subscription, cap, or ads."
+    },
+    {
+      "date": "2026-04",
+      "competitor": "Grammarly",
+      "headline": "Grammarly bundles voice via Voice Composer and a Speechify partnership",
+      "url": "https://www.grammarly.com/blog/product/voice-composer/",
+      "summary": "Grammarly's Voice Composer brings voice-to-text on iOS, and a Speechify partnership adds browser voice typing; voice ships inside paid Pro/Business tiers (exact timing unverified)."
+    },
+    {
+      "date": "2026-03",
+      "competitor": "VoiceInk",
+      "headline": "VoiceInk v1.72 ships for macOS",
+      "url": "https://tryvoiceink.com/",
+      "summary": "The open-source, on-device Mac dictation app continued regular updates; runs Whisper locally via the Neural Engine on Apple Silicon with optional BYOK AI enhancement."
+    },
+    {
+      "date": "2026-02",
+      "competitor": "Windows Voice Typing",
+      "headline": "Windows Fluid Dictation expands on Copilot+ PCs",
+      "url": "https://support.microsoft.com/windows",
+      "summary": "Microsoft's built-in Win+H dictation gained on-device small-language-model 'Fluid Dictation' auto-formatting on Copilot+ PCs (NPU-equipped, unverified across all SKUs)."
+    }
   ]
 }

@@ -112,11 +112,45 @@ export type Competitor = {
   vsHandy: string;
 };
 
+export type Swot = {
+  strengths: string[];
+  weaknesses: string[];
+  opportunities: string[];
+  threats: string[];
+};
+
+export type RoadmapPhase = {
+  horizon: string; // "Now" | "Next" | "Later"
+  theme: string;
+  items: string[];
+  rationale: string;
+};
+
+export type AggregatedNewsItem = {
+  date: string;
+  competitor: string;
+  headline: string;
+  url: string;
+  summary: string;
+};
+
+export const emptySwot: Swot = {
+  strengths: [],
+  weaknesses: [],
+  opportunities: [],
+  threats: [],
+};
+
 export type Competition = {
   generatedAt: string | null;
   summary: string;
   competitors: Competitor[];
   opportunities: string[];
+  // Added in v2. A previously-generated competition.json may lack these, so pages
+  // must read them defensively (e.g. `data.swot ?? emptySwot`, `data.roadmap ?? []`).
+  swot?: Swot;
+  roadmap?: RoadmapPhase[];
+  latestNews?: AggregatedNewsItem[];
 };
 
 const base = import.meta.env.BASE_URL;
@@ -182,6 +216,9 @@ export const loadCompetition = () =>
     summary: "",
     competitors: [],
     opportunities: [],
+    swot: emptySwot,
+    roadmap: [],
+    latestNews: [],
   });
 
 export const avatarUrl = (login: string) =>
